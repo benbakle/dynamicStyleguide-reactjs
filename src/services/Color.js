@@ -1,7 +1,7 @@
 class Color {
 
     colors = [
-        {name:"primary"},
+        {name:"primary", color:"#5500aa"},
         {name:"secondary"},
         {name:"alternative"},
    ];

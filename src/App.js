@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.scss';
+import './styles/typography.scss';
 import StyleList from './StyleList';
 
 function App() {
