@@ -13,6 +13,7 @@ class buttons {
     add(style) {
         if(!style.selector)
             return;
+        
         this.css.push(style);
         this.updateSubscribers();
     }
