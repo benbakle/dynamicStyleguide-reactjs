@@ -5,7 +5,12 @@ export default class Headings extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { css: [] }
+        this.state = { 
+            css: [],
+            selector:"",
+            property:"",
+            value:"",
+         }
     }
 
     componentDidMount() {
@@ -22,7 +27,7 @@ export default class Headings extends React.Component {
     }
 
     add = () => {
-        headings.add({ selector: this.state.selector, properties: { [this.state.property]: this.state.value } }, this.setCSS)
+        headings.add({ selector: this.state.selector, properties: { [this.state.property]: this.state.value } })
     }
 
     render() {
@@ -35,6 +40,7 @@ export default class Headings extends React.Component {
                 <input value={this.state.selector} name="selector" onChange={this.handleChange} />
                 <input value={this.state.property} name="property" onChange={this.handleChange} />
                 <input value={this.state.value} name="value" onChange={this.handleChange} />
+                
                 <button onClick={this.add}>Add</button>
                 {
                     css.map((item, key) =>

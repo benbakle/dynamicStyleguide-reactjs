@@ -1,10 +1,18 @@
-class Buttons {
+class buttons {
     callbacks = [];
     css = [
-      
+        {
+            selector: ".button",
+            properties: {
+                fontFamily: "'Open Sans', sans-serif",
+                letterSpacing:".1rem"
+            }
+        }
     ]
 
     add(style) {
+        if(!style.selector)
+            return;
         this.css.push(style);
         this.updateSubscribers();
     }
@@ -19,4 +27,4 @@ class Buttons {
 
 
 }
-export default new Buttons();
+export default new buttons();
