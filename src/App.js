@@ -3,14 +3,13 @@ import { Router, Route } from "react-router-dom";
 import History from './services/history';
 import Navigation from './components/Navigation';
 import Headings from './components/Headings';
-import StyleList from './components/StyleList';
+import Style from './components/Style';
 import Buttons from './components/Buttons';
 import './assets/css/app.scss';
 
 function App() {
   return (
     <div className="app">
-      <StyleList /> 
       <Router history={History}>
         <Navigation />
         <div className="app-body">
@@ -18,6 +17,9 @@ function App() {
           <Route exact path='/buttons' component={Buttons} />
         </div>
       </Router>
+      <div className="style-console">
+        <Style /> 
+      </div>
     </div>
   );
 }

@@ -1,33 +1,23 @@
 import React from 'react';
-import headings from '../services/headings';
+import styles from '../services/styles';
+import StyleAdd from './StyleAdd';
 
 export default class Headings extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { 
+        this.state = {
             css: [],
-            selector:"",
-            property:"",
-            value:"",
-         }
+        }
     }
 
     componentDidMount() {
-        headings.subscribe(this.setCSS)
+        styles.subscribe(this.setCSS)
         this.setCSS();
     }
 
     setCSS = () => {
-        this.setState({ css: headings.css });
-    }
-
-    handleChange = (e) => {
-        this.setState({ [e.target.name]: e.target.value });
-    }
-
-    add = () => {
-        headings.add({ selector: this.state.selector, properties: { [this.state.property]: this.state.value } })
+        this.setState({ css: styles.css.filter(i => i.type === "heading") });
     }
 
     render() {
@@ -37,13 +27,10 @@ export default class Headings extends React.Component {
             <div className="headings">
                 <div className="heading heading1">Headings</div>
 
-                <input value={this.state.selector} name="selector" onChange={this.handleChange} />
-                <input value={this.state.property} name="property" onChange={this.handleChange} />
-                <input value={this.state.value} name="value" onChange={this.handleChange} />
-                
-                <button onClick={this.add}>Add</button>
+                <StyleAdd type="heading" />
+
                 {
-                    css.map((item, key) =>
+                    css && css.map((item, key) =>
                         <div className={`heading ${item.selector.slice(1, item.selector.length)}`} key={key}>
                             {item.selector}
                         </div>

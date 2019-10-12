@@ -1,3 +1,35 @@
-:root{
-  font-size:62.5%;
+.style-console {
+  position: fixed;
+  font-family: "Courier New", Courier, monospace;
+  background-color: #333;
+  color: #fff;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  font-size: 1.4rem;
+  bottom: 0;
+  left: 0;
+  height: 15rem;
+  width: 100vw;
+}
+
+.style-add {
+  position: fixed;
+  right:3rem;
+  top:7.5rem;
+  padding: 2rem;
+  border: 0.1rem solid #333;
+  background-color: #555;
+  color: #fff;
+  box-sizing: border-box;
+  border-radius: .3rem;
+  box-shadow: 0 0 1rem rgba(0,0,0,.5);
+
+  .control-group {
+    padding: 0.5rem;
+
+    label {
+      display: inline-block;
+      width: 10rem;
+    }
+  }
 }

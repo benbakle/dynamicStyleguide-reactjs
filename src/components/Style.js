@@ -1,14 +1,19 @@
 import React from 'react';
+import styles from '../services/styles';
 
 export default class Style extends React.Component {
-
     constructor(props) {
         super(props);
         this.state = { css: null }
     }
 
     componentDidMount() {
-        this.setState({ css: this.props.css })
+        styles.subscribe(this.setCSS);
+        this.setCSS();
+    }
+
+    setCSS = () => {
+        this.setState({ css: styles.css });
     }
 
     stringified = () => {
@@ -44,9 +49,12 @@ export default class Style extends React.Component {
             return null;
 
         return (
-            <style dangerouslySetInnerHTML={{
-                __html: stringified()
-            }} />
+            <>
+                <style dangerouslySetInnerHTML={{
+                    __html: stringified()
+                }} />
+                    {stringified()}
+            </>
         );
     }
 }
