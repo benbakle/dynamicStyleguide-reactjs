@@ -1,8 +1,8 @@
 class Styles {
     callbacks = [];
+    
+    colors = { light: "#efefef", primary: "#333" };
 
-    lightColor = "#efefef";
-    primaryColor = "#333";
     css = [
         {
             type: "typography",
@@ -16,7 +16,7 @@ class Styles {
             selector: "body",
             properties: {
                 margin: "0",
-                color: this.primaryColor,
+                color: this.colors.primary,
                 fontSize: "1.6rem",
                 fontFamily: "'Roboto', sans-serif",
                 transitionDuration: ".3s",
@@ -34,14 +34,14 @@ class Styles {
             type: "typography",
             selector: "p.dark",
             properties: {
-                color: this.lightColor,
+                color: this.colors.light,
             }
         },
         {
             type: "typography",
             selector: ".icon.dark",
             properties: {
-                color: this.lightColor,
+                color: this.colors.light,
             }
         },
         {
@@ -56,8 +56,8 @@ class Styles {
             type: "heading",
             selector: ".dark",
             properties: {
-                color: this.lightColor,
-                borderColor: this.lightColor
+                color: this.colors.light,
+                borderColor: this.colors.light
             }
         },
         {
@@ -85,40 +85,40 @@ class Styles {
                 transitionDuration: ".3s",
                 fontWeight: "900",
                 fontSize: "2rem",
-                padding: ".5rem 2rem",
+                padding: ".25em 1em",
                 marginBottom: ".5rem",
                 boxSizing: "border-box",
                 backgroundColor: "transparent",
-                border: `.2rem solid ${this.primaryColor}`,
+                color:this.colors.primary,
+                border: `.2rem solid ${this.colors.primary}`,
                 borderRadius: ".4rem",
                 cursor: "pointer",
             }
         },
         {
             type: "button",
-            selector: ".button:hover",
+            selector: ".button:hover, .button.hover",
             properties: {
-                backgroundColor: this.primaryColor,
-                color: this.lightColor,
+                backgroundColor: this.colors.primary,
+                color: this.colors.light,
             }
         },
         {
             type: "button",
             selector: ".dark",
             properties: {
-                color: this.lightColor,
-                borderColor: this.lightColor,
+                color: this.colors.light,
+                borderColor: this.colors.light,
             }
         },
         {
             type: "button",
-            selector: ".button1",
+            selector: ".large",
             properties: {
                 fontSize: "3.4rem",
-                border: `.5rem solid ${this.primaryColor}`,
+                border: `.5rem solid ${this.colors.primary}`,
             }
         },
-
         {
             type: "button",
             selector: ".small",
@@ -127,10 +127,30 @@ class Styles {
             }
         },
         {
+            type: "form-control",
+            selector: "label",
+            properties: {
+                display:"inline-block",
+                fontSize: "1.4rem",
+                fontWeight: "900",
+                marginBottom: ".5rem",
+                marginTop: ".5rem",
+            }
+        },
+        {
+            type: "form-control",
+            selector: "input",
+            properties: {
+                margin:".5rem 1rem",
+                fontSize:"1.8rem",
+                padding:".5rem 1rem",
+            }
+        },
+        {
             type: "custom",
             selector: ".template .swim-lane .left",
             properties: {
-                backgroundColor: this.primaryColor,
+                backgroundColor: this.colors.primary,
             }
         }
     ]

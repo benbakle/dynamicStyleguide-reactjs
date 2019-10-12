@@ -2,46 +2,58 @@ import React from 'react';
 import styles from '../services/styles';
 import StyleAdd from './StyleAdd';
 
-export default class Headings extends React.Component {
+export default class StyleDisplay extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
             css: [],
-            headingText: "heading",
+            sampleText: "",
         }
     }
 
     componentDidMount() {
-        styles.subscribe(this.setCSS)
-        this.setCSS();
+        this.setState({ type: this.props.type }, () => {
+            styles.subscribe(this.setCSS)
+            this.setCSS();
+        })
     }
+
+    // componentWillReceiveProps(props) {
+    //     if (props)
+    //         this.setState({ type: this.props.match.params.type }, () => {
+    //             this.setCSS();
+    //         })
+    // }
 
     handleChange = (e) => {
         this.setState({ [e.target.name]: e.target.value });
     }
 
     setCSS = () => {
-        this.setState({ css: styles.css.filter(i => i.type === "heading") }, () => {
+        this.setState({
+            css: styles.css.filter(i => i.type === this.state.type),
+            sampleText: this.state.type
+        }, () => {
             console.log(this.state.css);
         });
     }
 
     render() {
-        const { css, headingText } = this.state;
+        const { css, sampleText, type } = this.state;
         const { handleChange } = this;
 
 
         return (
             <div className="headings">
                 <StyleAdd type="heading" />
-                <div className="heading heading1">Headings</div>
+                <div className="heading heading1">{type}</div>
                 <hr />
                 <p></p>
                 <div className="control-group flex align-center">
-                    <label>Heading Text: </label>
+                    <label>Sample Text: </label>
                     <div className="input-wrapper">
-                        <input value={headingText} onChange={handleChange} name="headingText" />
+                        <input value={sampleText} onChange={handleChange} name="sampleText" />
                     </div>
                 </div>
                 <p></p>
@@ -51,9 +63,9 @@ export default class Headings extends React.Component {
                     css && css.map((item, key) =>
                         <div className="control-group" key={key}>
                             <label>{item.selector}</label>
-                            <div className="button-wrapper" >
-                                <div className={`heading ${item.selector.replace(/\./g, ' ')}`}>
-                                    {headingText}
+                            <div className="wrapper" >
+                                <div className={`${type} ${item.selector.replace(/\./g, ' ')}`}>
+                                    {sampleText}
                                 </div>
                             </div>
                             <br />

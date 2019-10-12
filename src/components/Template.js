@@ -15,7 +15,7 @@ export default class Template extends React.Component {
                             <p>Cras ultricies ligula sed magna dictum porta. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit tortor eget felis porttitor volutpat.</p>
                             <br />
                             <div className="button-wrapper">
-                                <button className="button button1">Show Me</button>
+                                <button className="button large">Show Me</button>
                             </div>
                         </div>
                     </div>

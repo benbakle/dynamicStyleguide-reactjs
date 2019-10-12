@@ -1,6 +1,6 @@
 .app-body{
   position: relative;
-  padding:0 5rem;
+  padding:0 5rem 15rem;
 }
 
 .style-console {
@@ -15,6 +15,7 @@
   left: 0;
   height: 15rem;
   width: 100vw;
+  overflow:auto;
 }
 
 .style-add {
@@ -42,7 +43,6 @@
 
 
 .template {
-  padding-bottom: 15rem;
   margin:0 -5rem;
 
   .left,
@@ -81,7 +81,6 @@
 
   .swim-lane {
     height: calc(100vh - 15rem);
-
 
     .flex {
       height: 100%;

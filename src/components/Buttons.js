@@ -8,12 +8,17 @@ export default class Headings extends React.Component {
         super(props);
         this.state = {
             css: [],
+            buttonText: "Button",
         }
     }
 
     componentDidMount() {
         styles.subscribe(this.setCSS)
         this.setCSS();
+    }
+
+    handleChange = (e) => {
+        this.setState({ [e.target.name]: e.target.value });
     }
 
     setCSS = () => {
@@ -23,20 +28,34 @@ export default class Headings extends React.Component {
     }
 
     render() {
-        const { css } = this.state;
+        const { css, buttonText } = this.state;
+        const { handleChange } = this;
 
         return (
-            <div className="css">
-                <div className="heading heading1">Buttons</div>
-
+            <div className="buttons">
                 <StyleAdd type="button" />
-
+                <div className="heading heading1">Buttons</div>
+                <hr />
+                <p></p>
+                <div className="control-group flex align-center">
+                    <label>Button Text: </label>
+                    <div className="input-wrapper">
+                        <input value={buttonText} onChange={handleChange} name="buttonText" />
+                    </div>
+                </div>
+                <p></p>
+                <hr />
+                <p></p>
                 {
                     css.map((item, key) =>
-                        <div className="button-wrapper" key={key}>
-                            <button className={`button ${item.selector.replace(/\./g,' ')}`}>
-                                {item.selector}
-                            </button>
+                        <div className="control-group" key={key}>
+                            <label>{item.selector}</label>
+                            <div className="button-wrapper" >
+                                <button className={`button ${item.selector.replace(/\./g, ' ')}`}>
+                                    {buttonText}
+                                </button>
+                            </div>
+                            <br />
                         </div>
                     )
                 }

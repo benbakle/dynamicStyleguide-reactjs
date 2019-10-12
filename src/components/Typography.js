@@ -8,6 +8,7 @@ export default class Typography extends React.Component {
         super(props);
         this.state = {
             css: [],
+            sampleText: "The quick brown fox jumped over the lazy dog.",
         }
     }
 
@@ -16,6 +17,11 @@ export default class Typography extends React.Component {
         this.setCSS();
     }
 
+    handleChange = (e) => {
+        this.setState({ [e.target.name]: e.target.value });
+    }
+
+
     setCSS = () => {
         this.setState({ css: styles.css.filter(i => i.type === "typography") }, () => {
             console.log(this.state.css);
@@ -23,19 +29,32 @@ export default class Typography extends React.Component {
     }
 
     render() {
+        const { sampleText } = this.state;
+        const { handleChange } = this;
+
         return (
             <div className="css">
-                <div className="heading heading1">Typography</div>
-
                 <StyleAdd type="typography" />
+                <div className="heading heading1">Typography</div>
+                <hr />
+                <p></p>
+                <div className="control-group flex align-center">
+                    <label>Sample Text: </label>
+                    <div className="input-wrapper">
+                        <input value={sampleText} onChange={handleChange} name="sampleText" />
+                    </div>
+                </div>
+                <p></p>
+                <hr />
+                <p></p>
 
                 <label>Body</label>
-                <div className="">
-                    body
+                <div className="body">
+                    {sampleText}
                 </div>
 
                 <label>Paragraph</label>
-                <p>p</p>
+                <p> {sampleText}</p>
 
             </div>
         );
