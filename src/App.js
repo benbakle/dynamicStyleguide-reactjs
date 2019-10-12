@@ -6,6 +6,8 @@ import Headings from './components/Headings';
 import Style from './components/Style';
 import Buttons from './components/Buttons';
 import './assets/css/app.scss';
+import Template from './components/Template';
+import Typography from './components/Typography';
 
 function App() {
   return (
@@ -13,12 +15,14 @@ function App() {
       <Router history={History}>
         <Navigation />
         <div className="app-body">
+          <Route exact path='/typography' component={Typography} />
           <Route exact path='/headings' component={Headings} />
           <Route exact path='/buttons' component={Buttons} />
+          <Route exact path='/template' component={Template} />
         </div>
       </Router>
       <div className="style-console">
-        <Style /> 
+        <Style />
       </div>
     </div>
   );

@@ -1,5 +1,8 @@
 class Styles {
     callbacks = [];
+
+    lightColor = "#efefef";
+    primaryColor = "#333";
     css = [
         {
             type: "typography",
@@ -12,10 +15,33 @@ class Styles {
             type: "typography",
             selector: "body",
             properties: {
-                color: "#333",
+                margin: "0",
+                color: this.primaryColor,
                 fontSize: "1.6rem",
-                fontFamily: "'Open Sans', sans-serif",
-                transitionDuration:".3s",
+                fontFamily: "'Roboto', sans-serif",
+                transitionDuration: ".3s",
+            }
+        },
+        {
+            type: "typography",
+            selector: "p",
+            properties: {
+                lineHeight: "1.7em",
+                fontSize: "2rem",
+            }
+        },
+        {
+            type: "typography",
+            selector: "p.dark",
+            properties: {
+                color: this.lightColor,
+            }
+        },
+        {
+            type: "typography",
+            selector: ".icon.dark",
+            properties: {
+                color: this.lightColor,
             }
         },
         {
@@ -23,16 +49,88 @@ class Styles {
             selector: ".heading",
             properties: {
                 marginBottom: "1rem",
-                transitionDuration:".3s",
+                transitionDuration: ".3s",
             }
         },
-
+        {
+            type: "heading",
+            selector: ".dark",
+            properties: {
+                color: this.lightColor,
+                borderColor: this.lightColor
+            }
+        },
+        {
+            type: "heading",
+            selector: ".heading1",
+            properties: {
+                fontWeight: "900",
+                fontSize: "6rem",
+                textTransform: "uppercase",
+            }
+        },
+        {
+            type: "heading",
+            selector: ".heading2",
+            properties: {
+                fontWeight: "700",
+                fontSize: "4.2rem",
+            }
+        },
         {
             type: "button",
             selector: ".button",
             properties: {
                 letterSpacing: ".1rem",
-                transitionDuration:".3s",
+                transitionDuration: ".3s",
+                fontWeight: "900",
+                fontSize: "2rem",
+                padding: ".5rem 2rem",
+                marginBottom: ".5rem",
+                boxSizing: "border-box",
+                backgroundColor: "transparent",
+                border: `.2rem solid ${this.primaryColor}`,
+                borderRadius: ".4rem",
+                cursor: "pointer",
+            }
+        },
+        {
+            type: "button",
+            selector: ".button:hover",
+            properties: {
+                backgroundColor: this.primaryColor,
+                color: this.lightColor,
+            }
+        },
+        {
+            type: "button",
+            selector: ".dark",
+            properties: {
+                color: this.lightColor,
+                borderColor: this.lightColor,
+            }
+        },
+        {
+            type: "button",
+            selector: ".button1",
+            properties: {
+                fontSize: "3.4rem",
+                border: `.5rem solid ${this.primaryColor}`,
+            }
+        },
+
+        {
+            type: "button",
+            selector: ".small",
+            properties: {
+                fontSize: "1.6rem",
+            }
+        },
+        {
+            type: "custom",
+            selector: ".template .swim-lane .left",
+            properties: {
+                backgroundColor: this.primaryColor,
             }
         }
     ]

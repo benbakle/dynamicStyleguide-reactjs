@@ -17,7 +17,9 @@ export default class Headings extends React.Component {
     }
 
     setCSS = () => {
-        this.setState({ css: styles.css.filter(i => i.type === "heading") });
+        this.setState({ css: styles.css.filter(i => i.type === "heading") }, () => {
+            console.log(this.state.css);
+        });
     }
 
     render() {
@@ -31,7 +33,7 @@ export default class Headings extends React.Component {
 
                 {
                     css && css.map((item, key) =>
-                        <div className={`heading ${item.selector.slice(1, item.selector.length)}`} key={key}>
+                        <div className={`heading ${item.selector.replace(/\./g,' ')}`} key={key}>
                             {item.selector}
                         </div>
                     )

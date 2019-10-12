@@ -40,7 +40,7 @@ export default class StyleAdd extends React.Component {
                     <input value={this.state.value} name="value" onChange={this.handleChange} />
                 </div>
                 <div className="control-group">
-                    <button className="button button1" onClick={this.add}>Add</button>
+                    <button className="button small dark" onClick={this.add}>Add</button>
                 </div>
             </div>
         );
