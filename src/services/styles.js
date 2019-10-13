@@ -1,7 +1,7 @@
 class Styles {
     callbacks = [];
     
-    colors = { light: "#efefef", primary: "#333" };
+    colors = { light: "#efefef", dark: "#333" };
 
     css = [
         {
@@ -13,10 +13,10 @@ class Styles {
         },
         {
             type: "typography",
-            selector: "body",
+            selector: "body, .body",
             properties: {
                 margin: "0",
-                color: this.colors.primary,
+                color: this.colors.dark,
                 fontSize: "1.6rem",
                 fontFamily: "'Roboto', sans-serif",
                 transitionDuration: ".3s",
@@ -24,7 +24,7 @@ class Styles {
         },
         {
             type: "typography",
-            selector: "p",
+            selector: "p, .p",
             properties: {
                 lineHeight: "1.7em",
                 fontSize: "2rem",
@@ -32,7 +32,29 @@ class Styles {
         },
         {
             type: "typography",
-            selector: "p.dark",
+            selector: "a, .a",
+            properties: {
+                color: this.colors.dark,
+            }
+        },
+
+        {
+            type: "navigation",
+            selector: "nav, .nav",
+            properties: {
+                backgroundColor: this.colors.dark,
+            }
+        },
+        {
+            type: "navigation",
+            selector: "nav a, .nav a",
+            properties: {
+                color:this.colors.light,
+            }
+        },
+        {
+            type: "typography",
+            selector: "p.dark, .p.dark",
             properties: {
                 color: this.colors.light,
             }
@@ -54,7 +76,7 @@ class Styles {
         },
         {
             type: "heading",
-            selector: ".dark",
+            selector: ".heading.dark",
             properties: {
                 color: this.colors.light,
                 borderColor: this.colors.light
@@ -62,7 +84,7 @@ class Styles {
         },
         {
             type: "heading",
-            selector: ".heading1",
+            selector: ".heading.heading1",
             properties: {
                 fontWeight: "900",
                 fontSize: "6rem",
@@ -71,7 +93,7 @@ class Styles {
         },
         {
             type: "heading",
-            selector: ".heading2",
+            selector: ".heading.heading2",
             properties: {
                 fontWeight: "700",
                 fontSize: "4.2rem",
@@ -86,26 +108,27 @@ class Styles {
                 fontWeight: "900",
                 fontSize: "2rem",
                 padding: ".25em 1em",
-                marginBottom: ".5rem",
                 boxSizing: "border-box",
                 backgroundColor: "transparent",
-                color:this.colors.primary,
-                border: `.2rem solid ${this.colors.primary}`,
+                color:this.colors.dark,
+                border: `.2rem solid ${this.colors.dark}`,
                 borderRadius: ".4rem",
                 cursor: "pointer",
+                marginRight: ".5rem",
+
             }
         },
         {
             type: "button",
             selector: ".button:hover, .button.hover",
             properties: {
-                backgroundColor: this.colors.primary,
+                backgroundColor: this.colors.dark,
                 color: this.colors.light,
             }
         },
         {
             type: "button",
-            selector: ".dark",
+            selector: ".button.dark",
             properties: {
                 color: this.colors.light,
                 borderColor: this.colors.light,
@@ -113,22 +136,23 @@ class Styles {
         },
         {
             type: "button",
-            selector: ".large",
+            selector: ".button.large",
             properties: {
+                fontWeight:"200",
                 fontSize: "3.4rem",
-                border: `.5rem solid ${this.colors.primary}`,
+                border: `.2rem solid ${this.colors.dark}`,
             }
         },
         {
             type: "button",
-            selector: ".small",
+            selector: ".button.small",
             properties: {
-                fontSize: "1.6rem",
+                fontSize: "1.2rem",
             }
         },
         {
             type: "form-control",
-            selector: "label",
+            selector: "label, .label",
             properties: {
                 display:"inline-block",
                 fontSize: "1.4rem",
@@ -141,16 +165,17 @@ class Styles {
             type: "form-control",
             selector: "input",
             properties: {
-                margin:".5rem 1rem",
-                fontSize:"1.8rem",
+                width:"100%",
                 padding:".5rem 1rem",
+                boxSizing:"border-box",
+                fontSize:"1.4rem",
             }
         },
         {
             type: "custom",
             selector: ".template .swim-lane .left",
             properties: {
-                backgroundColor: this.colors.primary,
+                backgroundColor: this.colors.dark,
             }
         }
     ]

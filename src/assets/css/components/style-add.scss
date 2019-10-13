@@ -1,0 +1,22 @@
+.style-add {
+  position: fixed;
+  right: 3rem;
+  top: 10.5rem;
+  padding: 2rem;
+  border: 0.1rem solid #333;
+  background-color: #555;
+  color: #fff;
+  box-sizing: border-box;
+  border-radius: .3rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, .5);
+  z-index: 100;
+
+  .control-group {
+    padding: 0.5rem;
+
+    label {
+      display: inline-block;
+      width: 10rem;
+    }
+  }
+}

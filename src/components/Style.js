@@ -1,5 +1,7 @@
 import React from 'react';
 import styles from '../services/styles';
+import '../assets/css/components/style.scss';
+
 
 export default class Style extends React.Component {
     constructor(props) {
@@ -49,12 +51,12 @@ export default class Style extends React.Component {
             return null;
 
         return (
-            <>
+            <div className="style">
                 <style dangerouslySetInnerHTML={{
                     __html: stringified()
                 }} />
-                    {stringified()}
-            </>
+                {stringified()}
+            </div>
         );
     }
 }

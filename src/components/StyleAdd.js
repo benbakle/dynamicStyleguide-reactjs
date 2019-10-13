@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '../services/styles';
+import '../assets/css/components/style-add.scss';
 
 export default class StyleAdd extends React.Component {
 
@@ -12,6 +13,11 @@ export default class StyleAdd extends React.Component {
             value: "",
         }
     }
+
+    componentWillReceiveProps(props){
+        this.setState({selector:props.selector})
+    }
+
 
     handleChange = (e) => {
         this.setState({ [e.target.name]: e.target.value });

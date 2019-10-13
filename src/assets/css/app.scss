@@ -1,135 +1,17 @@
-.app-body{
+.app-body {
   position: relative;
-  padding:0 5rem 15rem;
+  padding: 5rem 5rem 15rem;
+  width: 100%;
 }
 
-.style-console {
-  position: fixed;
-  font-family: "Courier New", Courier, monospace;
-  background-color: #333;
-  color: #fff;
-  padding: 1.5rem;
-  box-sizing: border-box;
-  font-size: 1.4rem;
-  bottom: 0;
-  left: 0;
-  height: 15rem;
-  width: 100vw;
-  overflow:auto;
-}
+.properties-display {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 700;
+  margin-left: 3rem;
+  width: 65rem;
 
-.style-add {
-  position: fixed;
-  right: 3rem;
-  top: 7.5rem;
-  padding: 2rem;
-  border: 0.1rem solid #333;
-  background-color: #555;
-  color: #fff;
-  box-sizing: border-box;
-  border-radius: .3rem;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, .5);
-  z-index: 100;
-
-  .control-group {
-    padding: 0.5rem;
-
-    label {
-      display: inline-block;
-      width: 10rem;
-    }
-  }
-}
-
-
-.template {
-  margin:0 -5rem;
-
-  .left,
-  .right {
-    padding: 5rem;
-    box-sizing: border-box;
-  }
-
-  .banner {
-    position: relative;
-    height: calc(100vh - 22.5rem);
-    background-image: url("https://wallpapertag.com/wallpaper/full/6/1/c/71434-best-white-texture-background-3000x2000-ipad-retina.jpg");
-
-    .flex {
-      max-width: 144rem;
-      width: 100%;
-      margin: 0 auto;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    .left {
-      width: 50%;
-    }
-
-    .right {
-      width: 50%;
-    }
-
-    p {
-      margin-top: 0
-    }
-  }
-
-  .swim-lane {
-    height: calc(100vh - 15rem);
-
-    .flex {
-      height: 100%;
-    }
-
-    .left {
-      position: relative;
-      width: 40%;
-      transition-duration: .3s;
-
-      &:hover {
-        background-color: rgba(#555, .95);
-
-      }
-
-      .icon {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        font-size: 30rem;
-        transform: translate(-50%, -50%);
-      }
-    }
-
-
-    .right {
-      position: relative;
-      width: 60%;
-      background-image: url("https://www.pixel4k.com/wp-content/uploads/2018/10/dark-black-sand-texture-8k_1539371242.jpg");
-      background-position: center;
-      background-size: cover;
-
-      .content {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-      }
-    }
-  }
-}
-
-.flex {
-  display: flex;
-
-  &.align-center {
-    align-items: center;
-  }
-
-  &.justify-center {
-    justify-content: center;
+  input {
+    font-weight: inherit;
+    font-family: inherit;
   }
 }

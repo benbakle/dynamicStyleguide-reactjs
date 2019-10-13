@@ -1,21 +1,36 @@
 import React from 'react';
 import StyleAdd from './StyleAdd';
+import '../assets/css/components/template.scss';
 
 export default class Template extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            selected: "",
+        }
+    }
+
+    setSelector = (selector) => {
+        this.setState({ selected: selector });
+    }
+
     render() {
+        const { selected } = this.state;
+        const { setSelector } = this;
+
         return (
             <div className="template">
-                <StyleAdd type="custom" />
+                <StyleAdd type="custom" selector={selected} />
                 <div className="banner">
                     <div className="flex">
                         <div className="left">
-                            <div className="heading heading1">Create A Better Webpage!</div>
+                            <div className="heading heading1" onClick={()=>{setSelector(".heading.heading1")}}>Create A Better Webpage!</div>
                         </div>
                         <div className="right">
-                            <p>Cras ultricies ligula sed magna dictum porta. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit tortor eget felis porttitor volutpat.</p>
+                            <p onClick={()=>{setSelector("p, .p")}} >Cras ultricies ligula sed magna dictum porta. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit tortor eget felis porttitor volutpat.</p>
                             <br />
                             <div className="button-wrapper">
-                                <button className="button large">Show Me</button>
+                                <button className="button large" onClick={()=>{setSelector(".button.large")}}>Show Me</button>
                             </div>
                         </div>
                     </div>

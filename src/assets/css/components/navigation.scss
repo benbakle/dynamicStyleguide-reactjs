@@ -9,40 +9,16 @@
     }
 }
 
-.navigation-trigger {
-    position: relative;
-    height: 7.5rem;
-    box-sizing: border-box;
-    transition-duration: .5s;
-    background-color: rgba(white, .1);
-
-    &:hover {
-        background-color: white;
-
-        .navigation {
-            top: 0;
-        }
-    }
-}
-
 .navigation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: absolute;
-    top: -7.5rem;
-    width: 100%;
-    max-width: 76.8rem;
-    left: 50%;
-    transform: translateX(-50%);
+    display: block;
+    position: relative;
+    width: 20rem;
     margin: 0 auto;
-    height: 100%;
     transition-duration: .5s;
     padding: 1rem;
     box-sizing: border-box;
 
     ul {
-        display: flex;
         width: 100%;
         justify-content: space-between;
         list-style: none;
@@ -50,14 +26,13 @@
     }
 
     a {
-        letter-spacing: .2rem;
-        font-weight: 700;
-        color: #282C34;
-        font-size: 1.6rem;
-        text-transform: uppercase;
+        display: block;
+        padding: 0.5rem 0;
+        text-decoration: none;
+        font-size: 1.4rem;
 
         @include tablet {
-            font-size:1.8rem;
+            font-size: 1.6rem;
         }
 
         @include states {

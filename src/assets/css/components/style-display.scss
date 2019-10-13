@@ -1,0 +1,36 @@
+@import "../toolbox/media-queries.scss";
+
+.style-display {
+
+  label{
+    font-size:2.4rem;
+    padding:3rem 0;
+  }
+
+  .display {
+    padding: 5rem 0;
+    border-bottom: .1rem solid #efefef;
+  }
+
+  .table {
+    .table-row {
+      .table-cell {
+        width: auto;
+
+        &:first-child,
+        &:nth-child(2) {
+          @include tablet {
+            width: 20rem;
+          }
+        }
+      }
+    }
+  }
+
+  .entry {
+    border-top: .1rem solid #efefef;
+    border-bottom: .1rem solid #efefef;
+    padding: 3rem 0;
+    margin-bottom: 3rem;
+  }
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '../services/styles';
-import StyleAdd from './StyleAdd';
+import '../assets/css/components/style-display.scss';
+import Properties from './Properties';
 
 export default class StyleDisplay extends React.Component {
 
@@ -18,13 +19,6 @@ export default class StyleDisplay extends React.Component {
             this.setCSS();
         })
     }
-
-    // componentWillReceiveProps(props) {
-    //     if (props)
-    //         this.setState({ type: this.props.match.params.type }, () => {
-    //             this.setCSS();
-    //         })
-    // }
 
     handleChange = (e) => {
         this.setState({ [e.target.name]: e.target.value });
@@ -45,30 +39,44 @@ export default class StyleDisplay extends React.Component {
 
 
         return (
-            <div className="headings">
-                <StyleAdd type="heading" />
+            <div className="style-display">
+
+
                 <div className="heading heading1">{type}</div>
-                <hr />
-                <p></p>
-                <div className="control-group flex align-center">
+
+                <div className="control-group flex align-center entry">
                     <label>Sample Text: </label>
                     <div className="input-wrapper">
                         <input value={sampleText} onChange={handleChange} name="sampleText" />
                     </div>
                 </div>
-                <p></p>
-                <hr />
-                <p></p>
+
                 {
                     css && css.map((item, key) =>
-                        <div className="control-group" key={key}>
-                            <label>{item.selector}</label>
-                            <div className="wrapper" >
-                                <div className={`${type} ${item.selector.replace(/\./g, ' ')}`}>
-                                    {sampleText}
-                                </div>
+                        <div className="display flex" key={key}>
+                            <div className="left">
+                                <label>{item.selector} {`{`}</label>
+                                <Properties style={item} type={type} />
+                                <label>{`}`}</label>
                             </div>
-                            <br />
+
+                            <div className="right">
+                                {type === "button" &&
+                                    <div className="button-wrapper" >
+                                        <button className={`${item.selector.replace(/\./g, ' ')}`}>
+                                            {sampleText}
+                                        </button>
+                                    </div>
+                                }
+
+                                {type !== "button" &&
+                                    <div className="wrapper" >
+                                        <div className={`${type} ${item.selector.replace(/\./g, ' ')}`}>
+                                            {sampleText}
+                                        </div>
+                                    </div>
+                                }
+                            </div>
                         </div>
                     )
                 }

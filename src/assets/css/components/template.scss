@@ -1,0 +1,79 @@
+.template {
+  margin: -5rem -5rem 0;
+
+  .left,
+  .right {
+    padding: 5rem;
+    box-sizing: border-box;
+  }
+
+  .banner {
+    position: relative;
+    height: calc(100vh - 15rem);
+    background-image: url("https://wallpapertag.com/wallpaper/full/6/1/c/71434-best-white-texture-background-3000x2000-ipad-retina.jpg");
+
+    .flex {
+      max-width: 144rem;
+      width: 100%;
+      margin: 0 auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .left {
+      width: 50%;
+    }
+
+    .right {
+      width: 50%;
+    }
+
+    p {
+      margin-top: 0
+    }
+  }
+
+  .swim-lane {
+    height: calc(100vh - 15rem);
+
+    .flex {
+      height: 100%;
+    }
+
+    .left {
+      position: relative;
+      width: 40%;
+      transition-duration: .3s;
+
+      &:hover {
+        background-color: rgba(#555, .95);
+
+      }
+
+      .icon {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        font-size: 30rem;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+
+    .right {
+      position: relative;
+      width: 60%;
+      background-image: url("https://www.pixel4k.com/wp-content/uploads/2018/10/dark-black-sand-texture-8k_1539371242.jpg");
+      background-position: center;
+      background-size: cover;
+
+      .content {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}
