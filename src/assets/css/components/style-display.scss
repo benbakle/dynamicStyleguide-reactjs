@@ -2,18 +2,26 @@
 
 .style-display {
 
-  label{
-    font-size:2.4rem;
-    padding:3rem 0;
+  .left,
+  .right {
+    padding: 1.5rem;
+    box-sizing: border-box;
+    width:50%;
   }
 
-  .wrapper{
-    padding:3rem 0;
+  .right {
+    padding-top:6rem;
   }
 
+  
+  
   .display {
     padding: 2rem 0;
     border-bottom: .1rem solid #efefef;
+        label {
+         font-size: 2.4rem;
+         padding: 3rem 0;
+       }
   }
 
   .table {
@@ -35,6 +43,5 @@
     border-top: .1rem solid #efefef;
     border-bottom: .1rem solid #efefef;
     padding: 3rem 0;
-    margin-bottom: 3rem;
   }
 }

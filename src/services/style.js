@@ -1,6 +1,6 @@
 class Styles {
     callbacks = [];
-    
+
     colors = { light: "#efefef", dark: "#333" };
 
     css = [
@@ -55,21 +55,6 @@ class Styles {
                 color: "#222",
             }
         },
-      
-        {
-            type: "navigation",
-            selector: "nav, .nav",
-            properties: {
-                backgroundColor: this.colors.dark,
-            }
-        },
-        {
-            type: "navigation",
-            selector: "nav a, .nav a",
-            properties: {
-                color:this.colors.light,
-            }
-        },
         {
             type: "typography",
             selector: "p.dark, .p.dark",
@@ -122,16 +107,16 @@ class Styles {
             type: "button",
             selector: ".button",
             properties: {
-                display:"inline-block",
+                display: "inline-block",
                 fontFamily: "'Roboto', sans-serif",
                 letterSpacing: ".1rem",
                 transitionDuration: ".3s",
-                fontWeight:"300",
+                fontWeight: "300",
                 fontSize: "2rem",
                 padding: ".25em 1em",
                 boxSizing: "border-box",
                 backgroundColor: "transparent",
-                color:this.colors.dark,
+                color: this.colors.dark,
                 border: `.1rem solid ${this.colors.dark}`,
                 borderRadius: ".3rem",
                 cursor: "pointer",
@@ -167,7 +152,7 @@ class Styles {
             type: "button",
             selector: ".button.small",
             properties: {
-                fontWeight:"400",
+                fontWeight: "400",
                 fontSize: "1.2rem",
             }
         },
@@ -175,7 +160,7 @@ class Styles {
             type: "form-control",
             selector: "label, .label",
             properties: {
-                display:"inline-block",
+                display: "inline-block",
                 fontSize: "1.4rem",
                 fontWeight: "900",
                 marginBottom: ".5rem",
@@ -186,11 +171,11 @@ class Styles {
             type: "form-control",
             selector: "input",
             properties: {
-                width:"100%",
-                padding:".5rem 1rem",
-                boxSizing:"border-box",
+                width: "100%",
+                padding: ".5rem 1rem",
+                boxSizing: "border-box",
                 borderRadius: ".3rem",
-                fontSize:"1.4rem",
+                fontSize: "1.4rem",
             }
         },
         {
@@ -213,6 +198,10 @@ class Styles {
             : this.css.push(style);
 
         this.updateSubscribers();
+    }
+
+    types() {
+        return [...new Set(this.css.map(x => x.type))];
     }
 
     isValid(style) {

@@ -1,7 +1,8 @@
 import React from 'react';
-import styles from '../services/styles';
+import styles from '../services/style';
 import '../assets/css/components/style-display.scss';
 import Properties from './Properties';
+import StyleAdd from './StyleAdd';
 
 export default class StyleDisplay extends React.Component {
 
@@ -45,9 +46,9 @@ export default class StyleDisplay extends React.Component {
         const { handleChange } = this;
 
         return (
-            <div className="style-display">
+            <div className={`style-display ${type}-styles`}>
+                <StyleAdd type={type}  />
                 <div className="heading heading1">{type}</div>
-
                 <div className="control-group flex align-center entry">
                     <label>Sample Text:</label>
                     <div className="input-wrapper">

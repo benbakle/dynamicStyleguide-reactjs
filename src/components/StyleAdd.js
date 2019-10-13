@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../services/styles';
+import styles from '../services/style';
 import '../assets/css/components/style-add.scss';
 
 export default class StyleAdd extends React.Component {
