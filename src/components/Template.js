@@ -24,7 +24,7 @@ export default class Template extends React.Component {
 
         return (
             <div className="template body">
-                <StyleAdd type="custom" selector={selected} />
+                <StyleAdd selector={selected} />
                 <div className="banner">
                     <div className="flex">
                         <div className="left">

@@ -1,13 +1,7 @@
 @import '../toolbox/media-queries.scss';
 @import '../toolbox/mixins.scss';
 
-.navigation {
-    ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-}
+.navigation {}
 
 .navigation {
     display: block;
@@ -19,27 +13,38 @@
     transition-duration: .5s;
     box-sizing: border-box;
     z-index: 100;
+    font-size: 1.6rem;
 
-    ul {
-        width: 100%;
-        justify-content: space-between;
+    ul.templates-nav,
+    ul.colors-nav,
+    ul.styles-nav {
         list-style: none;
-        padding: 0;
+        padding: 1.5rem 1rem;
+        box-sizing: border-box;
+        margin: 0;
     }
 
-    a {
-        display: block;
-        padding: 1.5rem;
-        font-weight: 700;
-        color: #555;
-        text-decoration: none;
-        font-size: 1.4rem;
-        border-bottom: .1rem solid #555;
+    ul.styles-nav {
+        // width: 100%;
+        // justify-content: space-between;
+        // list-style: none;
+        // padding: 0;
 
-        @include states {
-            background-color: rgba(#efefef, .8);
-            color: #000;
+        // a,
+        // .a {
+        //     display: block;
+        //     padding: 1.5rem;
+        //     font-weight: 700;
+        //     color: #555;
+        //     text-decoration: none;
+        //     font-size: 1.4rem;
+        //     border-bottom: .1rem solid #555;
 
-        }
+        //     @include states {
+        //         background-color: rgba(#efefef, .8);
+        //         color: #000;
+
+        //     }
+        // }
     }
 }

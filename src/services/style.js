@@ -43,7 +43,7 @@ class Styles {
             type: "typography",
             selector: "a, .a",
             properties: {
-                color: this.colors.dark,
+                color: "inherit",
                 cursor: "pointer",
                 transitionDuration: ".3s",
             }
@@ -116,7 +116,7 @@ class Styles {
                 padding: ".25em 1em",
                 boxSizing: "border-box",
                 backgroundColor: "transparent",
-                color: this.colors.dark,
+                color: "inherit",
                 border: `.1rem solid ${this.colors.dark}`,
                 borderRadius: ".3rem",
                 cursor: "pointer",
@@ -189,6 +189,8 @@ class Styles {
 
     add(style) {
         let index = this.selectorExists(style.selector);
+        if (!style.type)
+            style.type = "unassigned"
 
         if (!this.isValid(style))
             return;

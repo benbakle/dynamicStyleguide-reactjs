@@ -23,13 +23,26 @@ export default class Navigation extends React.Component {
 
     return (
       <div className="navigation">
-        <ul>
-          <NavLink to="/" text="Template" />
-          {
-            styleTypes && styleTypes.map((item, key) =>
-              <NavLink to={`/type/${item}`} text={item} key={key} />
-            )
-          }
+        <ul class="templates-nav">
+          <li><div className="a">Templates</div>
+            <ul className="sub-nav">
+              <NavLink to="/" text="vanilla" />
+            </ul>
+          </li>
+        </ul>
+        <ul class="styles-nav">
+          <li><div className="a">Styles</div>
+            <ul className="sub-nav">
+              {
+                styleTypes && styleTypes.map((item, key) =>
+                  <NavLink to={`/type/${item}`} text={item} key={key} />
+                )
+              }
+            </ul>
+          </li>
+        </ul>
+        <ul class="colors-nav">
+                  <NavLink to={`/colors`} text="Colors"  />
         </ul>
       </div>
     );
