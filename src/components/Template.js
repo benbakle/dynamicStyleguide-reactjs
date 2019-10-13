@@ -36,7 +36,7 @@ export default class Template extends React.Component {
                     </div>
 
                 </div>
-                <div className="swim-lane">
+                <div className="swim-lane dark">
                     <div className="flex">
                         <div className="left">
                             <div className="icon dark">

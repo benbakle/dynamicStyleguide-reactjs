@@ -11,12 +11,14 @@
 
 .navigation {
     display: block;
-    position: relative;
-    width: 20rem;
+    position: fixed;
+    width: 25rem;
+    height: calc(100vh - 15rem);
+    background-color: rgba(#efefef, .5);
     margin: 0 auto;
     transition-duration: .5s;
-    padding: 1rem;
     box-sizing: border-box;
+    z-index: 100;
 
     ul {
         width: 100%;
@@ -27,16 +29,17 @@
 
     a {
         display: block;
-        padding: 0.5rem 0;
+        padding: 1.5rem;
+        font-weight: 700;
+        color: #555;
         text-decoration: none;
         font-size: 1.4rem;
-
-        @include tablet {
-            font-size: 1.6rem;
-        }
+        border-bottom: .1rem solid #555;
 
         @include states {
-            text-decoration: underline;
+            background-color: rgba(#efefef, .8);
+            color: #000;
+
         }
     }
 }

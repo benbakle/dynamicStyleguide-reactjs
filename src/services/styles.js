@@ -17,17 +17,25 @@ class Styles {
             properties: {
                 margin: "0",
                 color: this.colors.dark,
-                fontSize: "1.6rem",
+                fontSize: "2rem",
                 fontFamily: "'Roboto', sans-serif",
                 transitionDuration: ".3s",
             }
         },
+
+        {
+            type: "typography",
+            selector: "body.dark, .body.dark",
+            properties: {
+                color: this.colors.light,
+            }
+        },
+
         {
             type: "typography",
             selector: "p, .p",
             properties: {
                 lineHeight: "1.7em",
-                fontSize: "2rem",
             }
         },
         {
@@ -35,9 +43,18 @@ class Styles {
             selector: "a, .a",
             properties: {
                 color: this.colors.dark,
+                cursor: "pointer",
+                transitionDuration: ".3s",
             }
         },
-
+        {
+            type: "typography",
+            selector: "a:hover, .a:hover, a.hover, .a.hover",
+            properties: {
+                color: "#222",
+            }
+        },
+      
         {
             type: "navigation",
             selector: "nav, .nav",

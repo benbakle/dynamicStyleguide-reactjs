@@ -25,15 +25,15 @@ export default class PropertyAdd extends React.Component {
                 type: this.props.type
             })
     }
-    
+
     render() {
         return (
             <div className="table-row">
                 <div className="table-cell">
-                    <input value={this.state.property} name="property" onChange={this.handleChange} autocomplete="off" />
+                    <input value={this.state.property} name="property" onChange={this.handleChange} autoComplete="off" />
                 </div>
                 <div className="table-cell">
-                    <input value={this.state.value} name="value" onChange={this.handleChange} />
+                    <input value={this.state.value} name="value" onChange={this.handleChange} autoComplete="off"/>
                 </div>
                 <div className="table-cell">
                     <button className="button small" onClick={this.add}>add</button>

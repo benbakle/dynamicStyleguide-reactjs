@@ -10,18 +10,20 @@ import StyleDisplay from './components/StyleDisplay';
 class App extends Component {
   render() {
     return (
-      <div className="app flex">
-        <Router history={History}>
-          <Navigation />
-          <div className="app-body">
-            <Route exact path='/' component={Template} />
-            <Route exact path='/type/typography' render={()=><StyleDisplay type="typography" />} />
-            <Route exact path='/type/button' render={()=><StyleDisplay type="button" />} />
-            <Route exact path='/type/heading' render={()=><StyleDisplay type="heading" />} />
-            <Route exact path='/type/form-control' render={()=><StyleDisplay type="form-control" />} />
-          </div>
-        </Router>
+      <div className="app">
+        <div className="flex">
+          <Router history={History}>
+            <Navigation />
+            <div className="app-body">
+              <Route exact path='/' component={Template} />
+              <Route exact path='/type/typography' render={() => <StyleDisplay type="typography" />} />
+              <Route exact path='/type/button' render={() => <StyleDisplay type="button" />} />
+              <Route exact path='/type/heading' render={() => <StyleDisplay type="heading" />} />
+              <Route exact path='/type/form-control' render={() => <StyleDisplay type="form-control" />} />
+            </div>
+          </Router>
           <Style />
+        </div>
       </div>
     );
   }

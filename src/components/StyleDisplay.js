@@ -45,7 +45,7 @@ export default class StyleDisplay extends React.Component {
                 <div className="heading heading1">{type}</div>
 
                 <div className="control-group flex align-center entry">
-                    <label>Sample Text: </label>
+                    <label>Sample Text:</label>
                     <div className="input-wrapper">
                         <input value={sampleText} onChange={handleChange} name="sampleText" />
                     </div>
