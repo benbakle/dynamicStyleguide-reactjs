@@ -8,6 +8,7 @@ import Template from './components/Template';
 import StyleDisplay from './components/StyleDisplay';
 
 class App extends Component {
+
   render() {
     return (
       <div className="app">

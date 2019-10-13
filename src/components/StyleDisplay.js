@@ -22,6 +22,7 @@ export default class StyleDisplay extends React.Component {
     }
 
     load = (type) => {
+        window.scrollTo(0, 0)
         this.setState({ type: type }, () => {
             styles.subscribe(this.setCSS)
             this.setCSS();
