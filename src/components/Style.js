@@ -35,10 +35,15 @@ export default class Style extends React.Component {
         let propString = "";
 
         for (let prop in properties) {
-            propString = propString + `${this.formatProperty(prop)} : ${properties[prop]}; `
+            propString = propString + `${this.formatProperty(prop)} : ${this.formatValue(properties[prop])}; `
         }
 
         return propString;
+    }
+
+    formatValue = (value) => {
+        let isVariable = value.includes("$");
+        return isVariable ? styles.colors[value.split("$")[1]] : value;
     }
 
     formatProperty = (property) => {

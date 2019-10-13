@@ -6,6 +6,7 @@ import Style from './components/Style';
 import './assets/css/app.scss';
 import Template from './components/Template';
 import StyleDisplay from './components/StyleDisplay';
+import Colors from './components/Colors';
 
 class App extends Component {
 
@@ -18,6 +19,7 @@ class App extends Component {
             <div className="app-body">
               <Route exact path='/' component={Template} />
               <Route exact path='/type/:type' component={StyleDisplay} />
+              <Route exact path='/colors' component={Colors} />
             </div>
           </Router>
           <Style />

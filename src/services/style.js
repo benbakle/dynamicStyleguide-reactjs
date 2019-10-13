@@ -1,191 +1,9 @@
 class Styles {
     callbacks = [];
 
-    colors = { light: "#efefef", dark: "#333" };
+    colors = { light: "#efefef", dark: "#333", red:"brown" };
 
-    css = [
-        {
-            type: "typography",
-            selector: ":root",
-            properties: {
-                fontSize: "62.5%",
-            }
-        },
-        {
-            type: "typography",
-            selector: "body, .body",
-            properties: {
-                margin: "0",
-                color: this.colors.dark,
-                fontSize: "2rem",
-                fontFamily: "'Roboto', sans-serif",
-                transitionDuration: ".3s",
-            }
-        },
-
-        {
-            type: "typography",
-            selector: "body.dark, .body.dark",
-            properties: {
-                color: this.colors.light,
-                backgroundColor: this.colors.dark,
-            }
-        },
-
-        {
-            type: "typography",
-            selector: "p, .p",
-            properties: {
-                lineHeight: "1.7em",
-            }
-        },
-        {
-            type: "typography",
-            selector: "a, .a",
-            properties: {
-                color: "inherit",
-                cursor: "pointer",
-                transitionDuration: ".3s",
-            }
-        },
-        {
-            type: "typography",
-            selector: "a:hover, .a:hover, a.hover, .a.hover",
-            properties: {
-                color: "#222",
-            }
-        },
-        {
-            type: "typography",
-            selector: "p.dark, .p.dark",
-            properties: {
-                color: this.colors.light,
-            }
-        },
-        {
-            type: "typography",
-            selector: ".icon.dark",
-            properties: {
-                color: this.colors.light,
-            }
-        },
-        {
-            type: "heading",
-            selector: ".heading",
-            properties: {
-                letterSpacing: ".2rem",
-                marginBottom: "1rem",
-                transitionDuration: ".3s",
-            }
-        },
-        {
-            type: "heading",
-            selector: ".heading.dark",
-            properties: {
-                color: this.colors.light,
-                borderColor: this.colors.light
-            }
-        },
-        {
-            type: "heading",
-            selector: ".heading.heading1",
-            properties: {
-                fontWeight: "100",
-                fontSize: "7.5rem",
-                textTransform: "uppercase",
-            }
-        },
-        {
-            type: "heading",
-            selector: ".heading.heading2",
-            properties: {
-                fontWeight: "700",
-                fontSize: "4.2rem",
-            }
-        },
-        {
-            type: "button",
-            selector: ".button",
-            properties: {
-                display: "inline-block",
-                fontFamily: "'Roboto', sans-serif",
-                letterSpacing: ".1rem",
-                transitionDuration: ".3s",
-                fontWeight: "300",
-                fontSize: "2rem",
-                padding: ".25em 1em",
-                boxSizing: "border-box",
-                backgroundColor: "transparent",
-                color: "inherit",
-                border: `.1rem solid ${this.colors.dark}`,
-                borderRadius: ".3rem",
-                cursor: "pointer",
-                marginRight: ".5rem",
-
-            }
-        },
-        {
-            type: "button",
-            selector: ".button:hover, .button.hover",
-            properties: {
-                backgroundColor: this.colors.dark,
-                color: this.colors.light,
-            }
-        },
-        {
-            type: "button",
-            selector: ".button.dark",
-            properties: {
-                color: this.colors.light,
-                borderColor: this.colors.light,
-            }
-        },
-        {
-            type: "button",
-            selector: ".button.large",
-            properties: {
-                fontSize: "3.4rem",
-                border: `.1rem solid ${this.colors.dark}`,
-            }
-        },
-        {
-            type: "button",
-            selector: ".button.small",
-            properties: {
-                fontWeight: "400",
-                fontSize: "1.2rem",
-            }
-        },
-        {
-            type: "form-control",
-            selector: "label, .label",
-            properties: {
-                display: "inline-block",
-                fontSize: "1.4rem",
-                fontWeight: "900",
-                marginBottom: ".5rem",
-                marginTop: ".5rem",
-            }
-        },
-        {
-            type: "form-control",
-            selector: "input",
-            properties: {
-                width: "100%",
-                padding: ".5rem 1rem",
-                boxSizing: "border-box",
-                borderRadius: ".3rem",
-                fontSize: "1.4rem",
-            }
-        },
-        {
-            type: "custom",
-            selector: ".template .swim-lane .left",
-            properties: {
-                backgroundColor: this.colors.dark,
-            }
-        }
-    ]
+    css = this.css();
 
     add(style) {
         let index = this.selectorExists(style.selector);
@@ -222,6 +40,199 @@ class Styles {
         this.callbacks.push(callback);
     }
 
+    css() {
+        return [
+            {
+                type: "typography",
+                selector: ":root",
+                properties: {
+                    fontSize: "62.5%",
+                }
+            },
+            {
+                type: "typography",
+                selector: "body, .body",
+                properties: {
+                    margin: "0",
+                    color: "$dark",
+                    fontSize: "2rem",
+                    fontFamily: "'Roboto', sans-serif",
+                    transitionDuration: ".3s",
+                }
+            },
+
+            {
+                type: "typography",
+                selector: "body.dark, .body.dark",
+                properties: {
+                    color: "$light",
+                    backgroundColor: "$dark",
+                }
+            },
+
+            {
+                type: "typography",
+                selector: "p, .p",
+                properties: {
+                    lineHeight: "1.7em",
+                }
+            },
+            {
+                type: "typography",
+                selector: "a, .a",
+                properties: {
+                    color: "inherit",
+                    cursor: "pointer",
+                    transitionDuration: ".3s",
+                }
+            },
+            {
+                type: "typography",
+                selector: "a:hover, .a:hover, a.hover, .a.hover",
+                properties: {
+                    color: "#222",
+                }
+            },
+            {
+                type: "typography",
+                selector: "p.dark, .p.dark",
+                properties: {
+                    color: "$light",
+                }
+            },
+            {
+                type: "typography",
+                selector: ".icon.dark",
+                properties: {
+                    color: "$light",
+                }
+            },
+            {
+                type: "heading",
+                selector: ".heading",
+                properties: {
+                    letterSpacing: ".2rem",
+                    marginBottom: "1rem",
+                    transitionDuration: ".3s",
+                }
+            },
+            {
+                type: "heading",
+                selector: ".heading.dark",
+                properties: {
+                    color: "$light",
+                    borderColor: "$light"
+                }
+            },
+            {
+                type: "heading",
+                selector: ".heading.heading1",
+                properties: {
+                    fontWeight: "100",
+                    fontSize: "7.5rem",
+                    textTransform: "uppercase",
+                }
+            },
+            {
+                type: "heading",
+                selector: ".heading.heading2",
+                properties: {
+                    fontWeight: "700",
+                    fontSize: "4.2rem",
+                }
+            },
+            {
+                type: "button",
+                selector: ".button",
+                properties: {
+                    display: "inline-block",
+                    fontFamily: "'Roboto', sans-serif",
+                    letterSpacing: ".1rem",
+                    transitionDuration: ".3s",
+                    fontWeight: "300",
+                    fontSize: "2rem",
+                    padding: ".25em 1em",
+                    boxSizing: "border-box",
+                    backgroundColor: "transparent",
+                    color: "inherit",
+                    border: `.1rem solid`,
+                    borderColor: `$dark`,
+                    borderRadius: ".3rem",
+                    cursor: "pointer",
+                    marginRight: ".5rem",
+
+                }
+            },
+            {
+                type: "button",
+                selector: ".button:hover, .button.hover",
+                properties: {
+                    backgroundColor: "$dark",
+                    color: "$light",
+                }
+            },
+            {
+                type: "button",
+                selector: ".button.dark",
+                properties: {
+                    color: "$light",
+                    borderColor: "$light",
+                }
+            },
+            {
+                type: "button",
+                selector: ".button.large",
+                properties: {
+                    fontSize: "3.4rem",
+                    border: `.1rem solid`,
+                }
+            },
+            {
+                type: "button",
+                selector: ".button.small",
+                properties: {
+                    fontWeight: "400",
+                    fontSize: "1.2rem",
+                }
+            },
+            {
+                type: "form-control",
+                selector: "label, .label",
+                properties: {
+                    display: "inline-block",
+                    fontSize: "1.4rem",
+                    fontWeight: "900",
+                    marginBottom: ".5rem",
+                    marginTop: ".5rem",
+                }
+            },
+            {
+                type: "form-control",
+                selector: "input",
+                properties: {
+                    width: "100%",
+                    padding: ".5rem 1rem",
+                    boxSizing: "border-box",
+                    borderRadius: ".3rem",
+                    fontSize: "1.4rem",
+                }
+            },
+            {
+                type: "vanilla",
+                selector: ".vanilla .swim-lane .left",
+                properties: {
+                    backgroundColor: "$dark",
+                }
+            },
+            {
+                type: "vanilla",
+                selector: ".vanilla .swim-lane .left:hover",
+                properties: {
+                    backgroundColor: "rgba(0,0,0,.5)",
+                }
+            }
+        ]
+    }
 
 }
 export default new Styles();

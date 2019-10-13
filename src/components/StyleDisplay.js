@@ -41,13 +41,33 @@ export default class StyleDisplay extends React.Component {
         });
     }
 
+    parseSelectorToHtml = (selector) => {
+        let singleSelector = selector.split(",");
+        let cascade = singleSelector[0].split(" ");
+
+        return cascade.map((item, key) =>
+            <div key={key}>
+                {
+                    item.includes(".") &&
+                    <div className={`${item.replace(/\./g, ' ').split(":hover")[0]}`} key={key}>
+                        {cascade.length === (key + 1) && this.state.sampleText}
+                    </div>
+                }
+            </div>
+        )
+        // return (
+        //     <div className={`${selector.replace(/\./g, ' ')}`}>
+        //         {this.state.sampleText}
+        //     </div>
+        // )
+    }
+
     render() {
         const { css, sampleText, type } = this.state;
-        const { handleChange } = this;
+        const { handleChange, parseSelectorToHtml } = this;
 
         return (
             <div className={`style-display ${type}-styles`}>
-                <StyleAdd type={type}  />
                 <div className="heading heading1">{type}</div>
                 <div className="control-group flex align-center entry">
                     <label>Sample Text:</label>
@@ -55,6 +75,8 @@ export default class StyleDisplay extends React.Component {
                         <input value={sampleText} onChange={handleChange} name="sampleText" />
                     </div>
                 </div>
+
+                {/* <StyleAdd type={type} /> */}
 
                 {
                     css && css.map((item, key) =>
@@ -67,9 +89,7 @@ export default class StyleDisplay extends React.Component {
 
                             <div className="right">
                                 <div className="wrapper" >
-                                    <div className={`${type} ${item.selector.replace(/\./g, ' ')}`}>
-                                        {sampleText}
-                                    </div>
+                                    {parseSelectorToHtml(item.selector)}
                                 </div>
                             </div>
                         </div>
