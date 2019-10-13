@@ -7,7 +7,6 @@ export default class PropertyAdd extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            css: [],
             property: "",
             value: "",
         }
@@ -21,22 +20,25 @@ export default class PropertyAdd extends React.Component {
         if (this.state.property)
             styles.add({
                 selector: this.props.selector,
+                type: this.props.type,
                 properties: { [this.state.property]: this.state.value },
-                type: this.props.type
             })
     }
 
     render() {
+        const { property, value } = this.state;
+        const{ handleChange, add } = this;
+
         return (
             <div className="table-row">
                 <div className="table-cell">
-                    <input value={this.state.property} name="property" onChange={this.handleChange} autoComplete="off" />
+                    <input value={property} name="property" onChange={handleChange} autoComplete="off" />
                 </div>
                 <div className="table-cell">
-                    <input value={this.state.value} name="value" onChange={this.handleChange} autoComplete="off"/>
+                    <input value={value} name="value" onChange={handleChange} autoComplete="off" />
                 </div>
                 <div className="table-cell">
-                    <button className="button small" onClick={this.add}>add</button>
+                    <button className="button small" onClick={add}>add</button>
                 </div>
             </div>
         );

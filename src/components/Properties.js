@@ -5,8 +5,29 @@ import PropertyAdd from './PropertyAdd';
 
 export default class Properties extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {};
+    }
+
+    componentDidMount() {
+        this.load(this.props)
+    }
+
+    componentWillReceiveProps(props) {
+        this.load(props);
+    }
+
+    load = (props) => {
+        this.setState({
+            type: props.type,
+            properties: props.style.properties,
+            selector: props.style.selector,
+        })
+    }
+
     render() {
-        const { properties, selector } = this.props.style;
+        const { properties, selector, type } = this.state;
 
         let display = [];
 
@@ -17,10 +38,10 @@ export default class Properties extends React.Component {
         return (
             <div className="properties-display">
                 <div className="table">
-                    <PropertyAdd selector={selector} />
+                    <PropertyAdd selector={selector} type={type} />
                     {display.map((item, key) =>
                         <div className="table-row" key={key}>
-                            <PropertyRow property={item} selector={selector} type={this.props.type} />
+                            <PropertyRow property={item} selector={selector} type={type} />
                         </div>
                     )}
                 </div>

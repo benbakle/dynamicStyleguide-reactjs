@@ -27,7 +27,7 @@ export default class Style extends React.Component {
             cssString = cssString + `${style.selector} {${this.stringifyProperties(style.properties)}} `
         }
 
-        console.log(cssString);
+        // console.log(cssString);
         return cssString;
     }
 

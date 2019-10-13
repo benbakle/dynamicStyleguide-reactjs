@@ -14,7 +14,15 @@ export default class StyleDisplay extends React.Component {
     }
 
     componentDidMount() {
-        this.setState({ type: this.props.type }, () => {
+        this.load(this.props.match.params.type);
+    }
+
+    componentWillReceiveProps(props) {
+        this.load(props.match.params.type);
+    }
+
+    load = (type) => {
+        this.setState({ type: type }, () => {
             styles.subscribe(this.setCSS)
             this.setCSS();
         })
@@ -28,8 +36,6 @@ export default class StyleDisplay extends React.Component {
         this.setState({
             css: styles.css.filter(i => i.type === this.state.type),
             sampleText: this.state.type
-        }, () => {
-            console.log(this.state.css);
         });
     }
 
@@ -37,11 +43,8 @@ export default class StyleDisplay extends React.Component {
         const { css, sampleText, type } = this.state;
         const { handleChange } = this;
 
-
         return (
             <div className="style-display">
-
-
                 <div className="heading heading1">{type}</div>
 
                 <div className="control-group flex align-center entry">
@@ -61,21 +64,11 @@ export default class StyleDisplay extends React.Component {
                             </div>
 
                             <div className="right">
-                                {type === "button" &&
-                                    <div className="button-wrapper" >
-                                        <button className={`${item.selector.replace(/\./g, ' ')}`}>
-                                            {sampleText}
-                                        </button>
+                                <div className="wrapper" >
+                                    <div className={`${type} ${item.selector.replace(/\./g, ' ')}`}>
+                                        {sampleText}
                                     </div>
-                                }
-
-                                {type !== "button" &&
-                                    <div className="wrapper" >
-                                        <div className={`${type} ${item.selector.replace(/\./g, ' ')}`}>
-                                            {sampleText}
-                                        </div>
-                                    </div>
-                                }
+                                </div>
                             </div>
                         </div>
                     )

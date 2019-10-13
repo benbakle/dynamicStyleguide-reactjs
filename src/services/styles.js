@@ -28,6 +28,7 @@ class Styles {
             selector: "body.dark, .body.dark",
             properties: {
                 color: this.colors.light,
+                backgroundColor: this.colors.dark,
             }
         },
 
@@ -87,6 +88,7 @@ class Styles {
             type: "heading",
             selector: ".heading",
             properties: {
+                letterSpacing: ".2rem",
                 marginBottom: "1rem",
                 transitionDuration: ".3s",
             }
@@ -103,8 +105,8 @@ class Styles {
             type: "heading",
             selector: ".heading.heading1",
             properties: {
-                fontWeight: "900",
-                fontSize: "6rem",
+                fontWeight: "100",
+                fontSize: "7.5rem",
                 textTransform: "uppercase",
             }
         },
@@ -120,16 +122,18 @@ class Styles {
             type: "button",
             selector: ".button",
             properties: {
+                display:"inline-block",
+                fontFamily: "'Roboto', sans-serif",
                 letterSpacing: ".1rem",
                 transitionDuration: ".3s",
-                fontWeight: "900",
+                fontWeight:"300",
                 fontSize: "2rem",
                 padding: ".25em 1em",
                 boxSizing: "border-box",
                 backgroundColor: "transparent",
                 color:this.colors.dark,
-                border: `.2rem solid ${this.colors.dark}`,
-                borderRadius: ".4rem",
+                border: `.1rem solid ${this.colors.dark}`,
+                borderRadius: ".3rem",
                 cursor: "pointer",
                 marginRight: ".5rem",
 
@@ -155,15 +159,15 @@ class Styles {
             type: "button",
             selector: ".button.large",
             properties: {
-                fontWeight:"200",
                 fontSize: "3.4rem",
-                border: `.2rem solid ${this.colors.dark}`,
+                border: `.1rem solid ${this.colors.dark}`,
             }
         },
         {
             type: "button",
             selector: ".button.small",
             properties: {
+                fontWeight:"400",
                 fontSize: "1.2rem",
             }
         },
@@ -185,6 +189,7 @@ class Styles {
                 width:"100%",
                 padding:".5rem 1rem",
                 boxSizing:"border-box",
+                borderRadius: ".3rem",
                 fontSize:"1.4rem",
             }
         },

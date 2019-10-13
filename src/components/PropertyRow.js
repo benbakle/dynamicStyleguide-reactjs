@@ -7,14 +7,26 @@ export default class PropertyRow extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            inEditMode: true,
             name: "",
             value: "",
         }
     }
 
     componentDidMount() {
-        this.setState({ ...this.props.property })
+        this.load(this.props)
+    }
+
+    componentWillReceiveProps(props) {
+        this.load(props)
+    }
+
+    load = (props) => {
+        this.setState({
+            name: props.property.name,
+            value: props.property.value,
+            selector: props.selector,
+            type: props.type,
+        })
     }
 
     handleChange = (e) => {
@@ -23,14 +35,10 @@ export default class PropertyRow extends React.Component {
 
     save = () => {
         styles.add({
-            selector: this.props.selector,
+            selector: this.state.selector,
+            type: this.state.type,
             properties: { [this.state.name]: this.state.value },
-            type: this.props.type
-        }, this.setState({ inEditMode: true }))
-    }
-
-    toggleEditMode = () => {
-        this.setState({ inEditMode: !this.state.inEditMode })
+        })
     }
 
     formatProperty = (property) => {
@@ -39,7 +47,7 @@ export default class PropertyRow extends React.Component {
 
     render() {
         const { handleChange, formatProperty, save } = this;
-        const { inEditMode, name, value } = this.state;
+        const { name, value } = this.state;
 
         if (!name)
             return null;

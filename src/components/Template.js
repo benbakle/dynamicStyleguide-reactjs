@@ -19,7 +19,7 @@ export default class Template extends React.Component {
         const { setSelector } = this;
 
         return (
-            <div className="template">
+            <div className="template body">
                 <StyleAdd type="custom" selector={selected} />
                 <div className="banner">
                     <div className="flex">

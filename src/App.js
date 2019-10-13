@@ -16,10 +16,7 @@ class App extends Component {
             <Navigation />
             <div className="app-body">
               <Route exact path='/' component={Template} />
-              <Route exact path='/type/typography' render={() => <StyleDisplay type="typography" />} />
-              <Route exact path='/type/button' render={() => <StyleDisplay type="button" />} />
-              <Route exact path='/type/heading' render={() => <StyleDisplay type="heading" />} />
-              <Route exact path='/type/form-control' render={() => <StyleDisplay type="form-control" />} />
+              <Route exact path='/type/:type' component={StyleDisplay} />
             </div>
           </Router>
           <Style />
