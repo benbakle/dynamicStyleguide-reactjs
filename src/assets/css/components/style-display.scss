@@ -10,18 +10,30 @@
   }
 
   .right {
-    padding-top: 6rem;
+    border:1rem solid #555;
+    padding: 6rem;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+
+    .wrapper {
+      background-color: #fff;
+      padding: 5rem 3rem;
+      width: 100%;
+    }
   }
 
   .display {
     padding: 2rem 0;
     border-bottom: .1rem solid #efefef;
 
-    .label {
-      font-family: 'Roboto Mono', monospace;
-      font-size: 2.4rem;
-      padding: 3rem 0;
-      text-transform: initial;
+    .left {
+      .label {
+        font-family: 'Roboto Mono', monospace;
+        font-size: 2.4rem;
+        padding: 3rem 0;
+        text-transform: initial;
+      }
     }
   }
 
