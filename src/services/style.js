@@ -1,7 +1,7 @@
 class Styles {
     callbacks = [];
 
-    colors = { light: "#efefef", dark: "#333", red:"brown" };
+    colors = { light: "#efefef", mild: "#77839b", dark: "#282c34" };
 
     css = this.css();
 
@@ -17,6 +17,11 @@ class Styles {
             ? (this.css[index].properties = { ...this.css[index].properties, ...style.properties })
             : this.css.push(style);
 
+        this.updateSubscribers();
+    }
+
+    addColor(color) {
+        this.colors[color.name] = color.value;
         this.updateSubscribers();
     }
 
@@ -51,7 +56,7 @@ class Styles {
             },
             {
                 type: "typography",
-                selector: "body, .body",
+                selector: ".body, body",
                 properties: {
                     margin: "0",
                     color: "$dark",
@@ -63,7 +68,7 @@ class Styles {
 
             {
                 type: "typography",
-                selector: "body.dark, .body.dark",
+                selector: ".body.dark, body.dark",
                 properties: {
                     color: "$light",
                     backgroundColor: "$dark",
@@ -72,30 +77,34 @@ class Styles {
 
             {
                 type: "typography",
-                selector: "p, .p",
+                selector: ".p, p",
                 properties: {
                     lineHeight: "1.7em",
                 }
             },
             {
                 type: "typography",
-                selector: "a, .a",
+                selector: ".a, a",
                 properties: {
                     color: "inherit",
+                    opacity:".6",
                     cursor: "pointer",
                     transitionDuration: ".3s",
+                    textDecoration:"none",
                 }
             },
             {
                 type: "typography",
-                selector: "a:hover, .a:hover, a.hover, .a.hover",
+                selector: ".a.hover, .a:hover, a:hover, a.hover",
                 properties: {
-                    color: "#222",
+                    color: "$dark",
+                    opacity:"1",
+                    textDecoration:"underline",
                 }
             },
             {
                 type: "typography",
-                selector: "p.dark, .p.dark",
+                selector: ".p.dark, p.dark",
                 properties: {
                     color: "$light",
                 }
@@ -107,11 +116,20 @@ class Styles {
                     color: "$light",
                 }
             },
+
+            {
+                type: "typography",
+                selector: ".update-panel",
+                properties: {
+                    padding: "3rem",
+                    backgroundColor: "$mild",
+                    color: "$light",
+                }
+            },
             {
                 type: "heading",
                 selector: ".heading",
                 properties: {
-                    letterSpacing: ".2rem",
                     marginBottom: "1rem",
                     transitionDuration: ".3s",
                 }
@@ -121,15 +139,15 @@ class Styles {
                 selector: ".heading.dark",
                 properties: {
                     color: "$light",
-                    borderColor: "$light"
                 }
             },
             {
                 type: "heading",
                 selector: ".heading.heading1",
                 properties: {
+                    letterSpacing: ".2rem",
                     fontWeight: "100",
-                    fontSize: "7.5rem",
+                    fontSize: "4.2rem",
                     textTransform: "uppercase",
                 }
             },
@@ -138,9 +156,18 @@ class Styles {
                 selector: ".heading.heading2",
                 properties: {
                     fontWeight: "700",
-                    fontSize: "4.2rem",
+                    fontSize: "3.8rem",
                 }
             },
+            {
+                type: "heading",
+                selector: ".heading.heading3",
+                properties: {
+                    fontWeight: "700",
+                    fontSize: "2.8rem",
+                }
+            },
+
             {
                 type: "button",
                 selector: ".button",
@@ -151,12 +178,12 @@ class Styles {
                     transitionDuration: ".3s",
                     fontWeight: "300",
                     fontSize: "2rem",
-                    padding: ".25em 1em",
+                    padding: "1rem",
                     boxSizing: "border-box",
                     backgroundColor: "transparent",
                     color: "inherit",
                     border: `.1rem solid`,
-                    borderColor: `$dark`,
+                    borderColor: `$mild`,
                     borderRadius: ".3rem",
                     cursor: "pointer",
                     marginRight: ".5rem",
@@ -165,9 +192,9 @@ class Styles {
             },
             {
                 type: "button",
-                selector: ".button:hover, .button.hover",
+                selector: ".button.hover, .button:hover",
                 properties: {
-                    backgroundColor: "$dark",
+                    backgroundColor: "$mild",
                     color: "$light",
                 }
             },
@@ -197,7 +224,7 @@ class Styles {
             },
             {
                 type: "form-control",
-                selector: "label, .label",
+                selector: ".label, label",
                 properties: {
                     display: "inline-block",
                     fontSize: "1.4rem",
@@ -208,11 +235,14 @@ class Styles {
             },
             {
                 type: "form-control",
-                selector: "input",
+                selector: ".input, input",
                 properties: {
+                    display: "block",
                     width: "100%",
-                    padding: ".5rem 1rem",
+                    padding: "1rem",
                     boxSizing: "border-box",
+                    border:".1rem solid",
+                    borderColor:"$mild",
                     borderRadius: ".3rem",
                     fontSize: "1.4rem",
                 }
@@ -230,7 +260,8 @@ class Styles {
                 properties: {
                     backgroundColor: "rgba(0,0,0,.5)",
                 }
-            }
+            },
+
         ]
     }
 

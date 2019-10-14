@@ -32,10 +32,7 @@ export default class StyleAdd extends React.Component {
     }
     render() {
         return (
-            <div className="style-add">
-                <div className="header header2">
-                    Quick Style
-                </div>
+            <div className="style-add flex space-between align-center">
                 <div className="control-group">
                     <label>selector : </label>
                     <input value={this.state.selector} name="selector" onChange={this.handleChange} />
@@ -49,7 +46,7 @@ export default class StyleAdd extends React.Component {
                     <input value={this.state.value} name="value" onChange={this.handleChange} />
                 </div>
                 <div className="control-group">
-                    <button className="button small" onClick={this.add}>Add</button>
+                    <button className="button medium dark" onClick={this.add}>Add</button>
                 </div>
             </div>
         );

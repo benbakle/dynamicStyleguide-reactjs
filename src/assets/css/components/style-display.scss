@@ -6,22 +6,23 @@
   .right {
     padding: 1.5rem;
     box-sizing: border-box;
-    width:50%;
+    width: 50%;
   }
 
   .right {
-    padding-top:6rem;
+    padding-top: 6rem;
   }
 
-  
-  
   .display {
     padding: 2rem 0;
     border-bottom: .1rem solid #efefef;
-        label {
-         font-size: 2.4rem;
-         padding: 3rem 0;
-       }
+
+    .label {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 2.4rem;
+      padding: 3rem 0;
+      text-transform: initial;
+    }
   }
 
   .table {

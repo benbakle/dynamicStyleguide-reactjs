@@ -69,22 +69,26 @@ export default class StyleDisplay extends React.Component {
         return (
             <div className={`style-display ${type}-styles`}>
                 <div className="heading heading1">{type}</div>
-                <div className="control-group flex align-center entry">
-                    <label>Sample Text:</label>
-                    <div className="input-wrapper">
-                        <input value={sampleText} onChange={handleChange} name="sampleText" />
+
+                <div className="update-panel">
+                    <div className="heading heading3">Add Selector</div>
+                    <StyleAdd type={type} />
+
+                    <div className="control-group">
+                        <label>sample text:</label>
+                        <div className="input-wrapper">
+                            <input value={sampleText} onChange={handleChange} name="sampleText" />
+                        </div>
                     </div>
                 </div>
-
-                {/* <StyleAdd type={type} /> */}
 
                 {
                     css && css.map((item, key) =>
                         <div className="display flex" key={key}>
                             <div className="left">
-                                <label>{item.selector} {`{`}</label>
+                                <div className="label">{item.selector} {`{`}</div>
                                 <Properties style={item} type={type} />
-                                <label>{`}`}</label>
+                                <div className="label">{`}`}</div>
                             </div>
 
                             <div className="right">

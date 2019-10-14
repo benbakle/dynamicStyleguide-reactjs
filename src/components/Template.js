@@ -28,7 +28,7 @@ export default class Template extends React.Component {
                 <div className="banner">
                     <div className="flex">
                         <div className="left">
-                            <div className="heading heading1" onClick={() => { setSelector(".heading.heading1") }}>Create A Better Webpage!</div>
+                            <div className="heading heading1" onClick={() => { setSelector(".heading.heading1") }}>Update Your Webpage Live!</div>
                         </div>
                         <div className="right">
                             <p onClick={() => { setSelector("p, .p") }} >Cras ultricies ligula sed magna dictum porta. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit tortor eget felis porttitor volutpat.</p>
