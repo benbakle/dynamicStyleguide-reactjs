@@ -66,7 +66,6 @@ export default class Colors extends React.Component {
                             <div className="color-box" onClick={() => { setColor(item) }}
                                 style={{
                                     backgroundColor: item.value,
-                                    borderColor: "rgba(0,0,0,.1)",
                                 }} ></div>
                         </div>
                     )
