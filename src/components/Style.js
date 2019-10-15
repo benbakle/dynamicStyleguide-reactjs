@@ -24,11 +24,26 @@ export default class Style extends React.Component {
 
         for (let i = 0; i < css.length; i++) {
             let style = css[i];
-            cssString = cssString + `${style.selector} {${this.stringifyProperties(style.properties)}} `
+            cssString = cssString +
+                `${style.selector} {${this.stringifyProperties(style.properties)}} `
         }
 
-        // console.log(cssString);
         return cssString;
+    }
+
+    wrapSelector = (selector) => {
+        if (selector === ":root")
+            return selector;
+        if (selector === ".body, body")
+            return ".custom.body, .custom.body";
+
+        let custom = selector.split(", ");
+        let result = "";
+
+        custom.map((item, key) => {
+            result = result + `.custom ${item}${custom.length - 1 === key ? " " : ", "}`
+        })
+        return selector;
     }
 
     stringifyProperties = (properties) => {

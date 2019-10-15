@@ -22,8 +22,9 @@ class App extends Component {
               <Route exact path='/colors' component={Colors} />
             </div>
           </Router>
-          <Style />
         </div>
+
+        <Style />
       </div>
     );
   }

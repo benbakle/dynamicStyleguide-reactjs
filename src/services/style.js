@@ -65,16 +65,6 @@ class Styles {
                     transitionDuration: ".3s",
                 }
             },
-
-            {
-                type: "typography",
-                selector: ".body.dark, body.dark",
-                properties: {
-                    color: "$light",
-                    backgroundColor: "$dark",
-                }
-            },
-
             {
                 type: "typography",
                 selector: ".p, p",
@@ -87,87 +77,72 @@ class Styles {
                 selector: ".a, a",
                 properties: {
                     color: "inherit",
-                    opacity:".6",
+                    opacity: ".6",
                     cursor: "pointer",
                     transitionDuration: ".3s",
-                    textDecoration:"none",
+                    textDecoration: "none",
                 }
             },
             {
                 type: "typography",
-                selector: ".a.hover, .a:hover, a:hover, a.hover",
+                selector: ".a.hover, .a:hover, a.hover, a:hover",
                 properties: {
                     color: "$dark",
-                    opacity:"1",
-                    textDecoration:"underline",
-                }
-            },
-            {
-                type: "typography",
-                selector: ".p.dark, p.dark",
-                properties: {
-                    color: "$light",
-                }
-            },
-            {
-                type: "typography",
-                selector: ".icon.dark",
-                properties: {
-                    color: "$light",
-                }
-            },
-
-            {
-                type: "typography",
-                selector: ".update-panel",
-                properties: {
-                    padding: "3rem",
-                    backgroundColor: "$mild",
-                    color: "$light",
+                    opacity: "1",
+                    textDecoration: "underline",
                 }
             },
             {
                 type: "heading",
                 selector: ".heading",
                 properties: {
-                    marginBottom: "1rem",
+                    marginBottom: ".25em",
+                    lineHeight: "1.2",
                     transitionDuration: ".3s",
-                }
-            },
-            {
-                type: "heading",
-                selector: ".heading.dark",
-                properties: {
-                    color: "$light",
                 }
             },
             {
                 type: "heading",
                 selector: ".heading.heading1",
                 properties: {
-                    letterSpacing: ".2rem",
-                    fontWeight: "100",
-                    fontSize: "4.2rem",
-                    textTransform: "uppercase",
+                    fontSize: "4rem",
                 }
             },
             {
                 type: "heading",
                 selector: ".heading.heading2",
                 properties: {
-                    fontWeight: "700",
-                    fontSize: "3.8rem",
+                    fontSize: "3.2rem",
                 }
             },
             {
                 type: "heading",
                 selector: ".heading.heading3",
                 properties: {
-                    fontWeight: "700",
                     fontSize: "2.8rem",
                 }
             },
-
+            {
+                type: "heading",
+                selector: ".heading.heading4",
+                properties: {
+                    fontSize: "2.4rem",
+                }
+            },
+            {
+                type: "heading",
+                selector: ".heading.heading5",
+                properties: {
+                    fontSize: "2rem",
+                }
+            },
+            {
+                type: "heading",
+                selector: ".heading.heading6",
+                properties: {
+                    fontSize: "1.6rem",
+                }
+            },
             {
                 type: "button",
                 selector: ".button",
@@ -196,14 +171,6 @@ class Styles {
                 properties: {
                     backgroundColor: "$mild",
                     color: "$light",
-                }
-            },
-            {
-                type: "button",
-                selector: ".button.dark",
-                properties: {
-                    color: "$light",
-                    borderColor: "$light",
                 }
             },
             {
@@ -241,8 +208,8 @@ class Styles {
                     width: "100%",
                     padding: "1rem",
                     boxSizing: "border-box",
-                    border:".1rem solid",
-                    borderColor:"$mild",
+                    border: ".1rem solid",
+                    borderColor: "$mild",
                     borderRadius: ".3rem",
                     fontSize: "1.4rem",
                 }

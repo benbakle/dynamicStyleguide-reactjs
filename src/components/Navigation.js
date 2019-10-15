@@ -34,21 +34,15 @@ export default class Navigation extends React.Component {
 
     return (
       <div className="navigation">
-        <ul class="templates-nav">
-          <li><div className="label">Templates</div>
+        <ul className="templates-nav">
+          <li><div className="heading heading6">Templates</div>
             <ul className="sub-nav">
               <NavLink to="/" text="vanilla" />
             </ul>
           </li>
         </ul>
-        <ul class="styles-nav">
-          <li><div className="label">Styles</div>
-          <li className="flex">
-            <input value={newStyle} onChange={handleChange} name="newStyle" />
-            <button className="button small" onClick={addNewStyle}><i className="fas fa-plus"></i></button>
-          </li>
-
-
+        <ul className="styles-nav">
+          <li><div className="heading heading6">Styles</div>
             <ul className="sub-nav">
               {
                 styleTypes && styleTypes.map((item, key) =>
@@ -57,11 +51,13 @@ export default class Navigation extends React.Component {
               }
             </ul>
           </li>
-
-        
+          <li className="flex">
+            <input value={newStyle} onChange={handleChange} name="newStyle" />
+            <button className="button small" onClick={addNewStyle}><i className="fas fa-plus"></i></button>
+          </li>
         </ul>
-        <ul class="colors-nav">
-          <div className="label">Colors</div>
+        <ul className="colors-nav">
+          <div className="heading heading6">Colors</div>
           <Colors />
         </ul>
       </div>

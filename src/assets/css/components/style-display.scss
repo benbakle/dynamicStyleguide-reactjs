@@ -1,40 +1,15 @@
 @import "../toolbox/media-queries.scss";
+@import "../toolbox/mixins.scss";
 
 .style-display {
 
-  .left,
-  .right {
-    padding: 1.5rem;
+  .update-panel {
+    background-color: #444;
+    color: #fff;
+    padding: 3rem 1.5rem;
     box-sizing: border-box;
-    width: 50%;
-  }
-
-  .right {
-    border:1rem solid #555;
-    padding: 6rem;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-
-    .wrapper {
-      background-color: #fff;
-      padding: 5rem 3rem;
-      width: 100%;
-    }
-  }
-
-  .display {
-    padding: 2rem 0;
-    border-bottom: .1rem solid #efefef;
-
-    .left {
-      .label {
-        font-family: 'Roboto Mono', monospace;
-        font-size: 2.4rem;
-        padding: 3rem 0;
-        text-transform: initial;
-      }
-    }
+    border: .6rem solid #333;
+    border-left: none;
   }
 
   .table {
@@ -50,11 +25,5 @@
         }
       }
     }
-  }
-
-  .entry {
-    border-top: .1rem solid #efefef;
-    border-bottom: .1rem solid #efefef;
-    padding: 3rem 0;
   }
 }

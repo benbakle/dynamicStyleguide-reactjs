@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '../services/style';
 import '../assets/css/layouts/table.scss';
+import $css from '../assets/style-guide-css';
 
 export default class PropertyAdd extends React.Component {
 
@@ -27,18 +28,18 @@ export default class PropertyAdd extends React.Component {
 
     render() {
         const { property, value } = this.state;
-        const{ handleChange, add } = this;
+        const { handleChange, add } = this;
 
         return (
             <div className="table-row">
                 <div className="table-cell">
-                    <input value={property} name="property" onChange={handleChange} autoComplete="off" />
+                    <input value={property} name="property" onChange={handleChange} style={$css.input} />
                 </div>
                 <div className="table-cell">
-                    <input value={value} name="value" onChange={handleChange} autoComplete="off" />
+                    <input value={value} name="value" onChange={handleChange} style={$css.input} />
                 </div>
-                <div className="table-cell">
-                    <button className="button small" onClick={add}>add</button>
+                <div className="table-cell" style={{ width: "37px" }}>
+                    <button style={$css.button_small} onClick={add}>add</button>
                 </div>
             </div>
         );

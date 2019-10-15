@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '../services/style';
 import '../assets/css/components/style-display.scss';
+import $css from '../assets/style-guide-css';
 import Properties from './Properties';
 import StyleAdd from './StyleAdd';
 
@@ -49,7 +50,7 @@ export default class StyleDisplay extends React.Component {
             <div key={key}>
                 {
                     item.includes(".") &&
-                    <div className={`${item.replace(/\./g, ' ').split(":hover")[0]}`} key={key}>
+                    <div className={`${item.replace(/\./g, ' ')}`} key={key}>
                         {cascade.length === (key + 1) && this.state.sampleText}
                     </div>
                 }
@@ -68,37 +69,36 @@ export default class StyleDisplay extends React.Component {
 
         return (
             <div className={`style-display ${type}-styles`}>
-                <div className="heading heading1">{type}</div>
+                <div style={$css.page_heading}>{type}</div>
 
                 <div className="update-panel">
-                    <div className="heading heading3">Add Selector</div>
                     <StyleAdd type={type} />
 
                     <div className="control-group">
-                        <label>sample text:</label>
+                        <div style={$css.label}>sample text:</div>
                         <div className="input-wrapper">
-                            <input value={sampleText} onChange={handleChange} name="sampleText" />
+                            <input style={$css.input} value={sampleText} onChange={handleChange} name="sampleText" />
                         </div>
                     </div>
                 </div>
+                <div className="display-wrapper">
+                    {
+                        css && css.map((item, key) =>
+                            <div className="flex" key={key}>
 
-                {
-                    css && css.map((item, key) =>
-                        <div className="display flex" key={key}>
-                            <div className="left">
-                                <div className="label">{item.selector} {`{`}</div>
-                                <Properties style={item} type={type} />
-                                <div className="label">{`}`}</div>
-                            </div>
+                                <div style={$css.property_panel}>
+                                    <div style={$css.selector}>{item.selector} {`{`}</div>
+                                    <Properties style={item} type={type} />
+                                    <div style={$css.selector}>{`}`}</div>
+                                </div>
 
-                            <div className="right">
-                                <div className="wrapper" >
+                                <div style={$css.display_panel}>
                                     {parseSelectorToHtml(item.selector)}
                                 </div>
                             </div>
-                        </div>
-                    )
-                }
+                        )
+                    }
+                </div>
             </div>
         );
     }

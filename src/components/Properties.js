@@ -1,5 +1,6 @@
 import React from 'react';
 import '../assets/css/layouts/table.scss';
+import $css from '../assets/style-guide-css';
 import PropertyRow from './PropertyRow';
 import PropertyAdd from './PropertyAdd';
 
@@ -36,7 +37,7 @@ export default class Properties extends React.Component {
         }
 
         return (
-            <div className="properties-display">
+            <div style={$css. properties_display}>
                 <div className="table">
                     <PropertyAdd selector={selector} type={type} />
                     {display.map((item, key) =>

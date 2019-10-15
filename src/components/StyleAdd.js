@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '../services/style';
 import '../assets/css/components/style-add.scss';
+import $css from '../assets/style-guide-css';
 
 export default class StyleAdd extends React.Component {
 
@@ -34,19 +35,19 @@ export default class StyleAdd extends React.Component {
         return (
             <div className="style-add flex space-between align-center">
                 <div className="control-group">
-                    <label>selector : </label>
-                    <input value={this.state.selector} name="selector" onChange={this.handleChange} />
+                    <div style={$css.label}>selector : </div>
+                    <input style={$css.input} value={this.state.selector} name="selector" onChange={this.handleChange} />
                 </div>
                 <div className="control-group">
-                    <label>property : </label>
-                    <input value={this.state.property} name="property" onChange={this.handleChange} />
+                    <div style={$css.label}>property : </div>
+                    <input style={$css.input} value={this.state.property} name="property" onChange={this.handleChange} />
                 </div>
                 <div className="control-group">
-                    <label>value : </label>
-                    <input value={this.state.value} name="value" onChange={this.handleChange} />
+                    <div style={$css.label}>value : </div>
+                    <input style={$css.input} value={this.state.value} name="value" onChange={this.handleChange} />
                 </div>
                 <div className="control-group">
-                    <button className="button medium dark" onClick={this.add}>Add</button>
+                    <button style={$css.button_small} onClick={this.add}>Add</button>
                 </div>
             </div>
         );
