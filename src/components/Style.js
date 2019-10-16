@@ -27,7 +27,7 @@ export default class Style extends React.Component {
             cssString = cssString +
                 `${style.selector} {${this.stringifyProperties(style.properties)}} `
         }
-
+        // return ":root { font-size: 62.5%; }";
         return cssString;
     }
 

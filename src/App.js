@@ -3,10 +3,10 @@ import { Router, Route } from "react-router-dom";
 import History from './services/history';
 import Navigation from './components/Navigation';
 import Style from './components/Style';
-import './assets/css/app.scss';
 import Template from './components/Template';
 import StyleDisplay from './components/StyleDisplay';
 import Colors from './components/Colors';
+import $css from './assets/style-guide-css';
 
 class App extends Component {
 
@@ -16,7 +16,7 @@ class App extends Component {
         <div className="flex">
           <Router history={History}>
             <Navigation />
-            <div className="app-body">
+            <div className="app-body" style={$css.app}>
               <Route exact path='/' component={Template} />
               <Route exact path='/type/:type' component={StyleDisplay} />
               <Route exact path='/colors' component={Colors} />

@@ -31,14 +31,14 @@ export default class PropertyAdd extends React.Component {
         const { handleChange, add } = this;
 
         return (
-            <div className="table-row">
-                <div className="table-cell">
+            <div style={$css.table_row}>
+                <div style={$css.property_input_cell}>
                     <input value={property} name="property" onChange={handleChange} style={$css.input} />
                 </div>
-                <div className="table-cell">
+                <div style={$css.property_input_cell}>
                     <input value={value} name="value" onChange={handleChange} style={$css.input} />
                 </div>
-                <div className="table-cell" style={{ width: "37px" }}>
+                <div style={$css.property_button_cell}>
                     <button style={$css.button_small} onClick={add}>add</button>
                 </div>
             </div>

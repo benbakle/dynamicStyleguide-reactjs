@@ -1,39 +1,48 @@
+import { thisExpression } from "@babel/types"
+
 class StyleGuideCSS {
 
-    darkest = "#111";
-
-    label = {
-        fontFamily: "'Roboto', sans-serif",
-        display: "inline-block",
-        fontSize: "16px",
-        margin: "10px 0",
+    color = {
+        darkest: "#050607", //222
+        darker: "#282c34", //333
+        dark: "#3c424f", //444
+        lightest: "#fff",
     }
 
-    page_heading = {
-        fontFamily: "'Roboto', sans-serif",
-        padding: "30px 15px",
-        boxSizing: "border-box",
-        backgroundColor: "#333",
-        color: "#fff",
-        margin: "0",
-        fontSize: "40px",
-        textTransform:"capitalize",
+    borderColor = this.color.darker;
+    borderWidth = "10px";
+    fontSize = "16px";
+
+    app = {
+        position: "relative",
+        padding: "0",
+        width: "100%",
+    }
+
+    label = {
+        display: "inline-block",
+        fontSize: this.fontSize,
+        margin: "10px 0",
+        color: this.color.lightest,
+    }
+
+    link = {
+        color: this.color.lightest,
     }
 
     button = {
         display: "inline-block",
-        fontFamily: "'Roboto', sans-serif",
-        letterSpacing: ".1rem",
+        letterSpacing: "1px",
         transitionDuration: ".3s",
         fontWeight: "400",
-        fontSize: "16px",
+        fontSize: this.fontSize,
         padding: "10px",
         boxSizing: "border-box",
         backgroundColor: "transparent",
         color: "inherit",
-        border: `.1rem solid`,
+        border: `1px solid`,
         borderColor: `$mild`,
-        borderRadius: ".3rem",
+        borderRadius: "3px",
         cursor: "pointer",
 
     }
@@ -51,7 +60,7 @@ class StyleGuideCSS {
         width: "100%",
         padding: "10px",
         boxSizing: "border-box",
-        border: `.1rem solid ${this.darkest}`,
+        border: `1px solid ${this.color.darkest}`,
         borderRadius: "3px",
         fontSize: "14px",
         fontFamily: "'Roboto Mono', monospace",
@@ -65,34 +74,103 @@ class StyleGuideCSS {
 
     }
 
+    nav = {
+        backgroundColor: this.color.darker,
+        borderLeft: `${this.borderWidth} solid`,
+        borderRight: `${this.borderWidth} solid`,
+        borderColor: this.borderColor,
+        fontSize: this.fontSize,
+        paddingTop: "118px",
+    }
+
     panel = {
-        width: "50%",
+        backgroundColor: this.color.dark,
+        padding: "30px 15px",
         boxSizing: "border-box",
-        padding: "15px",
+        borderTop: `${this.borderWidth} solid`,
+        borderRight: `${this.borderWidth} solid`,
+        borderBottom: `${this.borderWidth} solid`,
+        borderLeft: `${this.borderWidth} solid`,
+        borderColor: this.borderColor,
+        margin: "0",
+        listStyle: "none",
+    }
+
+    nav_panel = {
+        ...this.panel,
+        color: this.color.lightest,
+        borderRight: "none",
+        borderLeft: `none`,
+    }
+
+    heading_panel = {
+        ...this.panel,
+        color: this.color.lightest,
+        borderLeft: `none`,
+        fontSize: "40px",
+        textTransform: "capitalize",
+        paddingLeft: "45px",
+    }
+
+    update_panel = {
+        ...this.panel,
+        color: this.color.lightest,
+        display: "none",
     }
 
     property_panel = {
         ...this.panel,
-        backgroundColor: "#444",
-        color: "#fff",
-        borderBottom: ".6rem solid #333",
+        color: this.color.lightest,
+        width: "50%",
+        color: this.color.lightest,
+        borderTop: `none`,
+        borderLeft: `none`,
     }
 
     display_panel = {
         ...this.panel,
+        width: "50%",
         backgroundColor: "#efefef",
-        borderBottom: ".6rem solid",
-        borderRight: ".6rem solid",
-        borderColor: "#333",
+        borderTop: `none`,
+        borderLeft: `none`,
     }
+
+    table = {
+        width: "100%",
+    }
+
+    table_row = {
+        display: "flex",
+    }
+
+    table_cell = {
+        display: "flex",
+        alignItems: "center",
+        width: "100%",
+        padding: "10px",
+        overflow: "hidden",
+        whiteSpace: "nowrap",
+        textOverflow: "ellipsis",
+    }
+
+    property_input_cell = {
+        ...this.table_cell,
+        width: "calc(50% - 55px)",
+        margin: "-7px -1px",
+    }
+
+    property_button_cell = {
+        ...this.table_cell,
+        width: "80px",
+    }
+
 
     properties_display = {
         fontFamily: "'Roboto Mono', monospace",
-        paddingLeft: "3rem",
-        boxSizing: "border-box",
-        color: "#fff",
-        // backgroundColor: "#444",
-        // borderBottom: `.6rem solid #333`
+        color: this.color.lightest,
+        fontSize: "20px",
+        padding:"0 60px",
+        boxSizing:"border-box"
     }
 
     // fontFamily: "'Roboto Mono', monospace",

@@ -1,6 +1,6 @@
 import React from 'react';
 import NavLink from './NavLink';
-import './../assets/css/components/navigation.scss';
+import $css from './../assets/style-guide-css';
 import styles from '../services/style';
 import history from '../services/history';
 import Colors from './Colors';
@@ -33,15 +33,15 @@ export default class Navigation extends React.Component {
     const { addNewStyle, handleChange } = this;
 
     return (
-      <div className="navigation">
-        <ul className="templates-nav">
-          <li><div className="heading heading6">Templates</div>
+      <div style={$css.nav}>
+        <ul style={$css.nav_panel}>
+          <li><div style={$css.heading6}>Templates</div>
             <ul className="sub-nav">
               <NavLink to="/" text="vanilla" />
             </ul>
           </li>
         </ul>
-        <ul className="styles-nav">
+        <ul style={$css.nav_panel}>
           <li><div className="heading heading6">Styles</div>
             <ul className="sub-nav">
               {
@@ -56,7 +56,7 @@ export default class Navigation extends React.Component {
             <button className="button small" onClick={addNewStyle}><i className="fas fa-plus"></i></button>
           </li>
         </ul>
-        <ul className="colors-nav">
+        <ul style={$css.nav_panel}>
           <div className="heading heading6">Colors</div>
           <Colors />
         </ul>

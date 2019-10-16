@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from '../services/style';
-import '../assets/css/layouts/table.scss';
 import $css from '../assets/style-guide-css';
 
 export default class PropertyRow extends React.Component {
@@ -54,15 +53,15 @@ export default class PropertyRow extends React.Component {
             return null;
 
         return (
-            <>
-                <div className="table-cell">{formatProperty(name)}</div>
-                <div className="table-cell">
-                    <input name="value" value={value} onChange={handleChange} style={{ ...$css.input, ...$css.properties_display_input }} />
+            <div style={$css.table_row}>
+                <div style={$css.property_input_cell}>{formatProperty(name)}</div>
+                <div style={$css.property_input_cell}>
+                    <input name="value" value={value} onChange={handleChange} style={$css.input} />
                 </div>
-                <div className="table-cell">
+                <div style={$css.property_button_cell} className="table-cell">
                     <button style={$css.button_small} onClick={save}>update</button>
                 </div>
-            </>
+            </div>
         );
     }
 }

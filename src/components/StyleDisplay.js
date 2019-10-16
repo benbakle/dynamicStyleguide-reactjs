@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from '../services/style';
-import '../assets/css/components/style-display.scss';
 import $css from '../assets/style-guide-css';
 import Properties from './Properties';
 import StyleAdd from './StyleAdd';
@@ -69,9 +68,9 @@ export default class StyleDisplay extends React.Component {
 
         return (
             <div className={`style-display ${type}-styles`}>
-                <div style={$css.page_heading}>{type}</div>
+                <div style={$css.heading_panel}>{type}</div>
 
-                <div className="update-panel">
+                <div style={$css.update_panel} >
                     <StyleAdd type={type} />
 
                     <div className="control-group">

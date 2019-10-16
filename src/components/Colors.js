@@ -1,7 +1,5 @@
 import React from 'react';
-import '../assets/css/components/colors.scss';
 import styles from '../services/style';
-import { thisExpression } from '@babel/types';
 
 export default class Colors extends React.Component {
 
