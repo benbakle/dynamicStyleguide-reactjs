@@ -68,6 +68,7 @@ class Styles {
                 type: "heading",
                 selector: ".heading",
                 properties: {
+                    textTransform:"capitalize",
                     marginBottom: ".25em",
                     lineHeight: "1.2",
                     transitionDuration: ".3s",

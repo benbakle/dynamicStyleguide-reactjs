@@ -5,7 +5,8 @@ class StyleGuideCSS {
     color = {
         darkest: "#050607", //222
         darker: "#282c34", //333
-        dark: "#3c424f", //444
+        dark: "#2b313a", //444
+        primary: "#3c424f", //444
         lightest: "#fff",
     }
 
@@ -91,7 +92,7 @@ class StyleGuideCSS {
     }
 
     panel = {
-        backgroundColor: this.color.dark,
+        backgroundColor: this.color.primary,
         padding: "30px 15px",
         boxSizing: "border-box",
         borderTop: `${this.borderWidth} solid`,
@@ -105,6 +106,7 @@ class StyleGuideCSS {
 
     navigation_panel = {
         ...this.panel,
+        backgroundColor:this.color.dark,
         color: this.color.lightest,
         borderRight: "none",
         borderLeft: "none",
@@ -113,9 +115,9 @@ class StyleGuideCSS {
 
     heading_panel = {
         ...this.panel,
+        backgroundColor:this.color.dark,
         color: this.color.lightest,
         borderLeft: `none`,
-        // fontSize: "40px",
         padding: "45px 30px",
         marginLeft: "-290px",
         width: "calc(100vw - 27px)",
