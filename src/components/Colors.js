@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '../services/style';
+import $css from '../assets/style-guide-css';
 
 export default class Colors extends React.Component {
 
@@ -41,6 +42,34 @@ export default class Colors extends React.Component {
 
         return (
             <div className="colors-display">
+
+                <ul name="navigation-list" style={$css.navigation_list}>
+                    {
+                        colors && colors.map((item, key) =>
+                            <li style={$css.link} key={key}>
+                                <div style={$css.table}>
+                                    <div style={$css.table_row} onClick={() => { setColor(item) }}>
+                                        <div style={$css.table_cell}>
+                                            {item.name}
+                                        </div>
+                                        <div style={$css.table_cell}>
+                                            {item.value}
+                                        </div>
+                                        <div style={$css.table_cell}>
+                                            <input name="input-color" type="color" style={$css.input_color} value={item.value} />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* <div className="color-box" onClick={() => { setColor(item) }}
+                                    style={{
+                                        backgroundColor: item.value,
+                                    }} ></div> */}
+                            </li>
+                        )
+                    }
+                </ul>
+
                 <div className="add-color">
                     <div className="control-group">
                         <label>name : </label>
@@ -48,7 +77,7 @@ export default class Colors extends React.Component {
                     </div>
                     <div className="control-group">
                         <label>value : </label>
-                        <input value={value} name="value" onChange={handleChange} type="color" />
+                        <input type="color" style={$css.input_color} value={value} name="value" onChange={handleChange} />
                     </div>
                     <br />
                     <div className="control-group">
@@ -57,17 +86,7 @@ export default class Colors extends React.Component {
                         </div>
                     </div>
                 </div>
-                {
-                    colors && colors.map((item, key) =>
-                        <div className="color-palette" key={key}>
-                            <div className="label"> {item.name} : {item.value}</div>
-                            <div className="color-box" onClick={() => { setColor(item) }}
-                                style={{
-                                    backgroundColor: item.value,
-                                }} ></div>
-                        </div>
-                    )
-                }
+
             </div>
         );
     }

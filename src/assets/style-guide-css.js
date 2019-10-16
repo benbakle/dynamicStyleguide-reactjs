@@ -7,7 +7,7 @@ class StyleGuideCSS {
         darker: "#282c34", //333
         dark: "#2b313a", //444
         primary: "#3c424f", //444
-        lightest: "#fff",
+        lightest: "#efefef",
     }
 
     borderColor = this.color.darker;
@@ -29,6 +29,10 @@ class StyleGuideCSS {
 
     link = {
         color: this.color.lightest,
+        display: "block",
+        padding: "3px 5px",
+        textDecoration: "none",
+        fontWeight: "300",
     }
 
     button = {
@@ -38,7 +42,6 @@ class StyleGuideCSS {
         fontSize: this.fontSize,
         padding: "10px",
         boxSizing: "border-box",
-        backgroundColor: "transparent",
         color: "inherit",
         border: `1px solid`,
         borderColor: `$mild`,
@@ -50,9 +53,9 @@ class StyleGuideCSS {
     button_small = {
         ...this.button,
         fontSize: "12px",
-        padding: "5px",
+        padding: "10px",
         boxSizing: "border-box",
-        minWidth: "75px",
+        width: "75px",
         fontFamily: "inherit",
     }
 
@@ -91,8 +94,14 @@ class StyleGuideCSS {
         fontWeight: "700",
     }
 
+    navigation_list = {
+        listStyle: "none",
+        padding: "0",
+        margin: "0",
+        marginBottom: "10px",
+    }
+
     panel = {
-        backgroundColor: this.color.primary,
         padding: "30px 15px",
         boxSizing: "border-box",
         borderTop: `${this.borderWidth} solid`,
@@ -106,7 +115,7 @@ class StyleGuideCSS {
 
     navigation_panel = {
         ...this.panel,
-        backgroundColor:this.color.dark,
+        backgroundColor: this.color.dark,
         color: this.color.lightest,
         borderRight: "none",
         borderLeft: "none",
@@ -115,17 +124,19 @@ class StyleGuideCSS {
 
     heading_panel = {
         ...this.panel,
-        backgroundColor:this.color.dark,
+        backgroundColor: this.color.dark,
         color: this.color.lightest,
         borderLeft: `none`,
-        padding: "45px 30px",
+        padding: "45px 15px",
         marginLeft: "-290px",
         width: "calc(100vw - 27px)",
+        fontSize: "40px",
     }
 
     update_panel = {
         ...this.panel,
         color: this.color.lightest,
+        backgroundColor: this.color.primary,
         borderLeft: "none",
         borderTop: "none",
         // display: "none",
@@ -134,6 +145,7 @@ class StyleGuideCSS {
     property_panel = {
         ...this.panel,
         color: this.color.lightest,
+        backgroundColor: this.color.primary,
         width: "50%",
         color: this.color.lightest,
         borderTop: `none`,
@@ -143,7 +155,6 @@ class StyleGuideCSS {
     display_panel = {
         ...this.panel,
         width: "50%",
-        backgroundColor: "#efefef",
         borderTop: `none`,
         borderLeft: `none`,
     }
@@ -161,7 +172,7 @@ class StyleGuideCSS {
         alignItems: "center",
         width: "100%",
         padding: "10px",
-        boxSizing:"border-box",
+        boxSizing: "border-box",
         overflow: "hidden",
         whiteSpace: "nowrap",
         textOverflow: "ellipsis",
@@ -194,6 +205,10 @@ class StyleGuideCSS {
         fontSize: "16px",
         padding: "0 15px",
         boxSizing: "border-box"
+    }
+
+    input_color = {
+        padding: "0",
     }
 
     // fontFamily: "'Roboto Mono', monospace",

@@ -68,7 +68,9 @@ export default class StyleDisplay extends React.Component {
 
         return (
             <div className={`style-display ${type}-styles`}>
-                <div name="heading-panel" style={$css.heading_panel} className="heading heading1">{type}</div>
+                <div name="heading-panel" style={$css.heading_panel} className="heading heading1">
+                    {type}
+                </div>
 
                 <div style={$css.update_panel} >
                     <StyleAdd type={type} />
@@ -90,7 +92,7 @@ export default class StyleDisplay extends React.Component {
                                     <div name="selector" style={$css.selector}>{`}`}</div>
                                 </div>
 
-                                <div name="display-panel" style={$css.display_panel}>
+                                <div name="display-panel" style={$css.display_panel} className="body">
                                     {parseSelectorToHtml(item.selector)}
                                 </div>
                             </div>

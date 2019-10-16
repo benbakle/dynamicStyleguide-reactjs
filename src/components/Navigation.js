@@ -36,17 +36,17 @@ export default class Navigation extends React.Component {
       <div name="navigation" style={$css.navigation}>
         <div name="navigation-panel" style={$css.navigation_panel}>
 
-          <div name="navigation-heading" style={$css.navigation_heading}>Templates</div>
+          <div name="navigation-heading" className="heading heading6" style={$css.navigation_heading}>Templates</div>
 
-          <ul className="sub-nav">
+          <ul name="navigation-list" style={$css.navigation_list}>
             <NavLink to="/" text="vanilla" />
           </ul>
 
         </div>
         <div name="navigation-panel" style={$css.navigation_panel}>
-          <div name="navigation-heading" style={$css.navigation_heading}>Styles</div>
+          <div name="navigation-heading" className="heading heading6" style={$css.navigation_heading}>Styles</div>
 
-          <ul className="sub-nav">
+          <ul name="navigation-list" style={$css.navigation_list}>
             {
               styleTypes && styleTypes.map((item, key) =>
                 <NavLink to={`/type/${item}`} text={item} key={key} />

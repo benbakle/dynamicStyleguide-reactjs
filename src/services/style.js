@@ -62,13 +62,14 @@ class Styles {
                     fontSize: "2rem",
                     fontFamily: "'Roboto', sans-serif",
                     transitionDuration: ".3s",
+                    backgroundColor: "$light",
+                    color: "$dark",
                 }
             },
             {
                 type: "heading",
                 selector: ".heading",
                 properties: {
-                    textTransform:"capitalize",
                     marginBottom: ".25em",
                     lineHeight: "1.2",
                     transitionDuration: ".3s",
@@ -78,6 +79,7 @@ class Styles {
                 type: "heading",
                 selector: ".heading.heading1",
                 properties: {
+                    textTransform: "uppercase",
                     fontSize: "4rem",
                 }
             },
@@ -117,106 +119,106 @@ class Styles {
                 }
             },
 
-            // {
-            //     type: "typography",
-            //     selector: ".p, p",
-            //     properties: {
-            //         lineHeight: "1.7em",
-            //     }
-            // },
-            // {
-            //     type: "typography",
-            //     selector: ".a, a",
-            //     properties: {
-            //         color: "inherit",
-            //         opacity: ".6",
-            //         cursor: "pointer",
-            //         transitionDuration: ".3s",
-            //         textDecoration: "none",
-            //     }
-            // },
-            // {
-            //     type: "typography",
-            //     selector: ".a.hover, .a:hover, a.hover, a:hover",
-            //     properties: {
-            //         color: "$dark",
-            //         opacity: "1",
-            //         textDecoration: "underline",
-            //     }
-            // },
-            // {
+            {
+                type: "typography",
+                selector: ".p, p",
+                properties: {
+                    lineHeight: "1.7em",
+                }
+            },
+            {
+                type: "typography",
+                selector: ".a, a",
+                properties: {
+                    color: "inherit",
+                    opacity: ".5",
+                    cursor: "pointer",
+                    transitionDuration: ".3s",
+                    textDecoration: "none",
+                }
+            },
+            {
+                type: "typography",
+                selector: ".a.hover, .a:hover, a.hover, a:hover",
+                properties: {
+                    color: "$dark",
+                    opacity: "1",
+                }
+            },
 
-            // {
-            //     type: "button",
-            //     selector: ".button",
-            //     properties: {
-            //         display: "inline-block",
-            //         fontFamily: "'Roboto', sans-serif",
-            //         letterSpacing: ".1rem",
-            //         transitionDuration: ".3s",
-            //         fontWeight: "300",
-            //         fontSize: "2rem",
-            //         padding: "1rem",
-            //         boxSizing: "border-box",
-            //         backgroundColor: "transparent",
-            //         color: "inherit",
-            //         border: `.1rem solid`,
-            //         borderColor: `$mild`,
-            //         borderRadius: ".3rem",
-            //         cursor: "pointer",
-            //         marginRight: ".5rem",
-
-            //     }
-            // },
-            // {
-            //     type: "button",
-            //     selector: ".button.hover, .button:hover",
-            //     properties: {
-            //         backgroundColor: "$mild",
-            //         color: "$light",
-            //     }
-            // },
-            // {
-            //     type: "button",
-            //     selector: ".button.large",
-            //     properties: {
-            //         fontSize: "3.4rem",
-            //         border: `.1rem solid`,
-            //     }
-            // },
-            // {
-            //     type: "button",
-            //     selector: ".button.small",
-            //     properties: {
-            //         fontWeight: "400",
-            //         fontSize: "1.2rem",
-            //     }
-            // },
-            // {
-            //     type: "form-control",
-            //     selector: ".label, label",
-            //     properties: {
-            //         display: "inline-block",
-            //         fontSize: "1.4rem",
-            //         fontWeight: "900",
-            //         marginBottom: ".5rem",
-            //         marginTop: ".5rem",
-            //     }
-            // },
-            // {
-            //     type: "form-control",
-            //     selector: ".input, input",
-            //     properties: {
-            //         display: "block",
-            //         width: "100%",
-            //         padding: "1rem",
-            //         boxSizing: "border-box",
-            //         border: ".1rem solid",
-            //         borderColor: "$mild",
-            //         borderRadius: ".3rem",
-            //         fontSize: "1.4rem",
-            //     }
-            // },
+            {
+                type: "button",
+                selector: ".button, button",
+                properties: {
+                    display: "inline-block",
+                    fontFamily: "'Roboto', sans-serif",
+                    letterSpacing: ".1rem",
+                    transitionDuration: ".3s",
+                    fontWeight: "300",
+                    fontSize: "2rem",
+                    padding: "1rem",
+                    boxSizing: "border-box",
+                    backgroundColor: "transparent",
+                    color: "inherit",
+                    border: `.1rem solid`,
+                    borderColor: `$mild`,
+                    borderRadius: ".3rem",
+                    cursor: "pointer",
+                    marginRight: ".5rem",
+                    opacity: ".7",
+                }
+            },
+            {
+                type: "button",
+                selector: ".button.hover, .button:hover, button.hover, button:hover",
+                properties: {
+                    opacity: "1",
+                    backgroundColor: "$mild",
+                    borderColor: "$mild",
+                    color: "$light",
+                }
+            },
+            {
+                type: "button",
+                selector: ".button.large",
+                properties: {
+                    fontSize: "3.4rem",
+                }
+            },
+            {
+                type: "button",
+                selector: ".button.small",
+                properties: {
+                    fontSize: "1.2rem",
+                }
+            },
+            {
+                type: "form-control",
+                selector: ".label, label",
+                properties: {
+                    display: "inline-block",
+                    fontSize: "1.4rem",
+                    fontWeight: "900",
+                    marginBottom: ".5rem",
+                    marginTop: ".5rem",
+                    transitionDuration: ".3s",
+                }
+            },
+            {
+                type: "form-control",
+                selector: ".input, input",
+                properties: {
+                    display: "block",
+                    width: "100%",
+                    padding: "1rem",
+                    boxSizing: "border-box",
+                    border: ".1rem solid",
+                    borderColor: "$mild",
+                    borderRadius: ".3rem",
+                    fontSize: "1.4rem",
+                    transitionDuration: ".3s",
+                }
+            },
             // {
             //     type: "vanilla",
             //     selector: ".vanilla .swim-lane .left",
