@@ -33,33 +33,37 @@ export default class Navigation extends React.Component {
     const { addNewStyle, handleChange } = this;
 
     return (
-      <div style={$css.nav}>
-        <ul style={$css.nav_panel}>
-          <li><div style={$css.heading6}>Templates</div>
-            <ul className="sub-nav">
-              <NavLink to="/" text="vanilla" />
-            </ul>
-          </li>
-        </ul>
-        <ul style={$css.nav_panel}>
-          <li><div className="heading heading6">Styles</div>
-            <ul className="sub-nav">
-              {
-                styleTypes && styleTypes.map((item, key) =>
-                  <NavLink to={`/type/${item}`} text={item} key={key} />
-                )
-              }
-            </ul>
-          </li>
-          <li className="flex">
+      <div name="navigation" style={$css.navigation}>
+        <div name="navigation-panel" style={$css.navigation_panel}>
+
+          <div name="navigation-heading" style={$css.navigation_heading}>Templates</div>
+
+          <ul className="sub-nav">
+            <NavLink to="/" text="vanilla" />
+          </ul>
+
+        </div>
+        <div name="navigation-panel" style={$css.navigation_panel}>
+          <div name="navigation-heading" style={$css.navigation_heading}>Styles</div>
+
+          <ul className="sub-nav">
+            {
+              styleTypes && styleTypes.map((item, key) =>
+                <NavLink to={`/type/${item}`} text={item} key={key} />
+              )
+            }
+          </ul>
+
+          <div className="flex">
             <input value={newStyle} onChange={handleChange} name="newStyle" />
             <button className="button small" onClick={addNewStyle}><i className="fas fa-plus"></i></button>
-          </li>
-        </ul>
-        <ul style={$css.nav_panel}>
-          <div className="heading heading6">Colors</div>
+          </div>
+
+        </div>
+        <div name="navigation-panel" style={$css.navigation_panel}>
+          <div name="navigation-heading" style={$css.navigation_heading}>Colors</div>
           <Colors />
-        </ul>
+        </div>
       </div>
     );
   }

@@ -16,7 +16,7 @@ class StyleGuideCSS {
     app = {
         position: "relative",
         padding: "0",
-        width: "100%",
+        width: "calc(100% - 300px)",
     }
 
     label = {
@@ -32,7 +32,6 @@ class StyleGuideCSS {
 
     button = {
         display: "inline-block",
-        letterSpacing: "1px",
         transitionDuration: ".3s",
         fontWeight: "400",
         fontSize: this.fontSize,
@@ -52,7 +51,8 @@ class StyleGuideCSS {
         fontSize: "12px",
         padding: "5px",
         boxSizing: "border-box",
-        minWidth: "55px",
+        minWidth: "75px",
+        fontFamily: "inherit",
     }
 
     input = {
@@ -68,19 +68,26 @@ class StyleGuideCSS {
 
     selector = {
         fontFamily: "'Roboto Mono', monospace",
-        padding: "30px",
+        padding: "30px 0",
         fontSize: "24px",
         boxSizing: "border-box",
 
     }
 
-    nav = {
+    navigation = {
         backgroundColor: this.color.darker,
         borderLeft: `${this.borderWidth} solid`,
         borderRight: `${this.borderWidth} solid`,
         borderColor: this.borderColor,
         fontSize: this.fontSize,
-        paddingTop: "118px",
+        paddingTop: "158px",
+        boxSizing: "border-box",
+        width: "300px"
+    }
+
+    navigation_heading = {
+        fontSize: "18px",
+        fontWeight: "700",
     }
 
     panel = {
@@ -96,26 +103,30 @@ class StyleGuideCSS {
         listStyle: "none",
     }
 
-    nav_panel = {
+    navigation_panel = {
         ...this.panel,
         color: this.color.lightest,
         borderRight: "none",
-        borderLeft: `none`,
+        borderLeft: "none",
+        borderTop: "none",
     }
 
     heading_panel = {
         ...this.panel,
         color: this.color.lightest,
         borderLeft: `none`,
-        fontSize: "40px",
-        textTransform: "capitalize",
-        paddingLeft: "45px",
+        // fontSize: "40px",
+        padding: "45px 30px",
+        marginLeft: "-290px",
+        width: "calc(100vw - 27px)",
     }
 
     update_panel = {
         ...this.panel,
         color: this.color.lightest,
-        display: "none",
+        borderLeft: "none",
+        borderTop: "none",
+        // display: "none",
     }
 
     property_panel = {
@@ -148,6 +159,7 @@ class StyleGuideCSS {
         alignItems: "center",
         width: "100%",
         padding: "10px",
+        boxSizing:"border-box",
         overflow: "hidden",
         whiteSpace: "nowrap",
         textOverflow: "ellipsis",
@@ -155,22 +167,31 @@ class StyleGuideCSS {
 
     property_input_cell = {
         ...this.table_cell,
-        width: "calc(50% - 55px)",
+        fontFamily: "'Roboto Mono', monospace",
+        width: "calc(50% - 48px)",
         margin: "-7px -1px",
+
+    }
+
+    property_label_cell = {
+        ...this.table_cell,
+        fontFamily: "'Roboto Mono', monospace",
+        width: "calc(50% - 48px)",
+        margin: "-7px -1px",
+        padding: "10px 20px",
     }
 
     property_button_cell = {
         ...this.table_cell,
-        width: "80px",
+        width: "96px",
     }
 
 
     properties_display = {
-        fontFamily: "'Roboto Mono', monospace",
         color: this.color.lightest,
-        fontSize: "20px",
-        padding:"0 60px",
-        boxSizing:"border-box"
+        fontSize: "16px",
+        padding: "0 15px",
+        boxSizing: "border-box"
     }
 
     // fontFamily: "'Roboto Mono', monospace",

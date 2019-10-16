@@ -64,6 +64,58 @@ class Styles {
                     transitionDuration: ".3s",
                 }
             },
+            {
+                type: "heading",
+                selector: ".heading",
+                properties: {
+                    marginBottom: ".25em",
+                    lineHeight: "1.2",
+                    transitionDuration: ".3s",
+                }
+            },
+            {
+                type: "heading",
+                selector: ".heading.heading1",
+                properties: {
+                    fontSize: "4rem",
+                }
+            },
+            {
+                type: "heading",
+                selector: ".heading.heading2",
+                properties: {
+                    fontSize: "3.2rem",
+                }
+            },
+            {
+                type: "heading",
+                selector: ".heading.heading3",
+                properties: {
+                    fontSize: "2.8rem",
+                }
+            },
+            {
+                type: "heading",
+                selector: ".heading.heading4",
+                properties: {
+                    fontSize: "2.4rem",
+                }
+            },
+            {
+                type: "heading",
+                selector: ".heading.heading5",
+                properties: {
+                    fontSize: "2rem",
+                }
+            },
+            {
+                type: "heading",
+                selector: ".heading.heading6",
+                properties: {
+                    fontSize: "1.6rem",
+                }
+            },
+
             // {
             //     type: "typography",
             //     selector: ".p, p",
@@ -92,56 +144,7 @@ class Styles {
             //     }
             // },
             // {
-            //     type: "heading",
-            //     selector: ".heading",
-            //     properties: {
-            //         marginBottom: ".25em",
-            //         lineHeight: "1.2",
-            //         transitionDuration: ".3s",
-            //     }
-            // },
-            // {
-            //     type: "heading",
-            //     selector: ".heading.heading1",
-            //     properties: {
-            //         fontSize: "4rem",
-            //     }
-            // },
-            // {
-            //     type: "heading",
-            //     selector: ".heading.heading2",
-            //     properties: {
-            //         fontSize: "3.2rem",
-            //     }
-            // },
-            // {
-            //     type: "heading",
-            //     selector: ".heading.heading3",
-            //     properties: {
-            //         fontSize: "2.8rem",
-            //     }
-            // },
-            // {
-            //     type: "heading",
-            //     selector: ".heading.heading4",
-            //     properties: {
-            //         fontSize: "2.4rem",
-            //     }
-            // },
-            // {
-            //     type: "heading",
-            //     selector: ".heading.heading5",
-            //     properties: {
-            //         fontSize: "2rem",
-            //     }
-            // },
-            // {
-            //     type: "heading",
-            //     selector: ".heading.heading6",
-            //     properties: {
-            //         fontSize: "1.6rem",
-            //     }
-            // },
+
             // {
             //     type: "button",
             //     selector: ".button",

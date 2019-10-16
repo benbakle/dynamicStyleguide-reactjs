@@ -37,8 +37,8 @@ export default class Properties extends React.Component {
         }
 
         return (
-            <div style={$css.properties_display}>
-                <div style={$css.table}>
+            <div name="properties-display" style={$css.properties_display}>
+                <div name="table" style={$css.table}>
                     <PropertyAdd selector={selector} type={type} />
                     {display.map((item, key) =>
                         <PropertyRow property={item} selector={selector} type={type} key={key} />

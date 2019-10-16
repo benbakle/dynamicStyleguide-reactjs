@@ -68,7 +68,7 @@ export default class StyleDisplay extends React.Component {
 
         return (
             <div className={`style-display ${type}-styles`}>
-                <div style={$css.heading_panel}>{type}</div>
+                <div name="heading-panel" style={$css.heading_panel} className="heading heading1">{type}</div>
 
                 <div style={$css.update_panel} >
                     <StyleAdd type={type} />
@@ -84,14 +84,13 @@ export default class StyleDisplay extends React.Component {
                     {
                         css && css.map((item, key) =>
                             <div className="flex" key={key}>
-
-                                <div style={$css.property_panel}>
-                                    <div style={$css.selector}>{item.selector} {`{`}</div>
+                                <div name="property-panel" style={$css.property_panel}>
+                                    <div name="selector" style={$css.selector}>{item.selector} {`{`}</div>
                                     <Properties style={item} type={type} />
-                                    <div style={$css.selector}>{`}`}</div>
+                                    <div name="selector" style={$css.selector}>{`}`}</div>
                                 </div>
 
-                                <div style={$css.display_panel}>
+                                <div name="display-panel" style={$css.display_panel}>
                                     {parseSelectorToHtml(item.selector)}
                                 </div>
                             </div>

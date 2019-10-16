@@ -54,11 +54,11 @@ export default class PropertyRow extends React.Component {
 
         return (
             <div style={$css.table_row}>
-                <div style={$css.property_input_cell}>{formatProperty(name)}</div>
-                <div style={$css.property_input_cell}>
+                <div name="property-label-cell" style={$css.property_label_cell}>{formatProperty(name)}</div>
+                <div name="property-input-cell" style={$css.property_input_cell}>
                     <input name="value" value={value} onChange={handleChange} style={$css.input} />
                 </div>
-                <div style={$css.property_button_cell} className="table-cell">
+                <div name="property-button-cell" style={$css.property_button_cell} className="table-cell">
                     <button style={$css.button_small} onClick={save}>update</button>
                 </div>
             </div>
