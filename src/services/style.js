@@ -73,6 +73,7 @@ class Styles {
                     marginBottom: ".25em",
                     lineHeight: "1.2",
                     transitionDuration: ".3s",
+                    fontWeight: "700"
                 }
             },
             {
@@ -80,6 +81,7 @@ class Styles {
                 selector: ".heading.heading1",
                 properties: {
                     textTransform: "uppercase",
+                    letterSpacing: ".1rem",
                     fontSize: "4rem",
                 }
             },
@@ -94,6 +96,7 @@ class Styles {
                 type: "heading",
                 selector: ".heading.heading3",
                 properties: {
+                    textTransform:"uppercase",
                     fontSize: "2.8rem",
                 }
             },
@@ -156,33 +159,32 @@ class Styles {
                     transitionDuration: ".3s",
                     fontWeight: "300",
                     fontSize: "2rem",
-                    padding: "1rem",
+                    padding: ".25em 1.5em",
                     boxSizing: "border-box",
-                    backgroundColor: "transparent",
-                    color: "inherit",
-                    border: `.1rem solid`,
-                    borderColor: `$mild`,
-                    borderRadius: ".3rem",
+                    backgroundColor: "$dark",
+                    borderStyle: `solid`,
+                    borderWidth: ".1rem",
+                    borderColor: `$dark`,
+                    color: "$light",
                     cursor: "pointer",
                     marginRight: ".5rem",
-                    opacity: ".7",
                 }
             },
             {
                 type: "button",
                 selector: ".button.hover, .button:hover, button.hover, button:hover",
                 properties: {
-                    opacity: "1",
-                    backgroundColor: "$mild",
-                    borderColor: "$mild",
-                    color: "$light",
+                    backgroundColor: "transparent",
+                    color: "$dark",
                 }
             },
             {
                 type: "button",
                 selector: ".button.large",
                 properties: {
-                    fontSize: "3.4rem",
+                    fontWeight: "400 ",
+                    fontSize: "2.8rem",
+                    borderWidth: `.2rem`,
                 }
             },
             {
@@ -219,13 +221,68 @@ class Styles {
                     transitionDuration: ".3s",
                 }
             },
-            // {
-            //     type: "vanilla",
-            //     selector: ".vanilla .swim-lane .left",
-            //     properties: {
-            //         backgroundColor: "$dark",
-            //     }
-            // },
+            {
+                type: "vanilla",
+                selector: ".video-banner .content-wrapper",
+                properties: {
+                    justifyContent: "flex-start",
+                    alignItems: "center",
+                }
+            },
+
+            {
+                type: "vanilla",
+                selector: ".video-banner .content",
+                properties: {
+                    maxWidth: "76.8rem",
+                    color: "$dark",
+                    padding: "5rem",
+                    boxSizing: "border-box",
+                }
+            },
+
+            {
+                type: "vanilla",
+                selector: ".mask",
+                properties: {
+                    backgroundColor: "$mild",
+                    opacity: ".5",
+
+                }
+            },
+
+            {
+                type: "vanilla",
+                selector: ".swim-lane",
+                properties: {
+                    display: "flex",
+                    padding: "10rem 5rem",
+                    boxSizing: "border-box",
+                }
+            },
+
+
+            {
+                type: "vanilla",
+                selector: ".swim-lane .left",
+                properties: {
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    fontSize: "30rem",
+                    color: "$mild",
+                    width: "40%",
+                }
+            },
+
+            {
+                type: "vanilla",
+                selector: ".swim-lane .right",
+                properties: {
+                    width: "60%",
+                }
+            },
+
             // {
             //     type: "vanilla",
             //     selector: ".vanilla .swim-lane .left:hover",

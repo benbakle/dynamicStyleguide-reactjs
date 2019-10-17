@@ -139,7 +139,6 @@ class StyleGuideCSS {
         backgroundColor: this.color.primary,
         borderLeft: "none",
         borderTop: "none",
-        // display: "none",
     }
 
     property_panel = {
@@ -152,11 +151,19 @@ class StyleGuideCSS {
         borderLeft: `none`,
     }
 
+    add_property_panel={
+        ...this.panel,
+        backgroundColor: this.color.primary,
+        borderLeft: `none`,
+        borderRight: `none`,
+    }
+
     display_panel = {
         ...this.panel,
         width: "50%",
         borderTop: `none`,
         borderLeft: `none`,
+        position: "relative",
     }
 
     table = {

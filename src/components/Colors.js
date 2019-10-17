@@ -56,7 +56,7 @@ export default class Colors extends React.Component {
                                             {item.value}
                                         </div>
                                         <div style={$css.table_cell}>
-                                            <input name="input-color" type="color" style={$css.input_color} value={item.value} />
+                                            <input name="input-color" type="color" style={$css.input_color} value={item.value} readOnly />
                                         </div>
                                     </div>
                                 </div>

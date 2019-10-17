@@ -33,7 +33,7 @@ export default class StyleAdd extends React.Component {
     }
     render() {
         return (
-            <div className="style-add flex space-between align-center">
+            <div style={$css.add_property_panel} className="style-add flex space-between align-center">
                 <div className="control-group">
                     <div style={$css.label}>selector : </div>
                     <input style={$css.input} value={this.state.selector} name="selector" onChange={this.handleChange} />

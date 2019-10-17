@@ -1,72 +1,39 @@
-.template {
-  .left,
-  .right {
-    padding: 5rem;
-    box-sizing: border-box;
-  }
 
-  .banner {
+  .video-banner {
     position: relative;
-    height: calc(100vh - 15rem);
-    background-image: url("https://wallpapertag.com/wallpaper/full/6/1/c/71434-best-white-texture-background-3000x2000-ipad-retina.jpg");
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
 
-    .flex {
-      max-width: 144rem;
-      width: 100%;
-      margin: 0 auto;
+    video {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      width: 120%;
+      height: 120%;
+      left: -10%;
+      top: -10%;
+      z-index: 0;
     }
 
-    .left {
-      width: 50%;
-    }
-
-    .right {
-      width: 50%;
-    }
-
-    p {
-      margin-top: 0
-    }
-  }
-
-  .swim-lane {
-    height: calc(100vh - 15rem);
-
-    .flex {
+    .mask,
+    .content-wrapper {
+      display: flex;
+      position: absolute;
+      width: 100%;
       height: 100%;
+      top: 0;
+      left: 0;
     }
 
-    .left {
-      position: relative;
-      width: 40%;
-      transition-duration: .3s;
-
-      .icon {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        font-size: 30rem;
-        transform: translate(-50%, -50%);
-      }
+    .mask {
+      position: "absolute";
+      width: "100%";
+      height: "100%";
+      top: "0";
+      left: "0";
+      z-index: 1;
     }
 
-
-    .right {
-      position: relative;
-      width: 60%;
-      background-image: url("https://www.pixel4k.com/wp-content/uploads/2018/10/dark-black-sand-texture-8k_1539371242.jpg");
-      background-position: center;
-      background-size: cover;
-
-      .content {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-      }
+    .content-wrapper {
+      z-index: 2;
     }
   }
-}
