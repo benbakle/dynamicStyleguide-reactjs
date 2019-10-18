@@ -24,7 +24,7 @@ export default class Template extends React.Component {
 
         return (
             <div className="template body">
-                {/* <StyleAdd type="vanilla" selector={selected} /> */}
+                <StyleAdd type="vanilla" selector={selected} />
                 <div className="video-banner">
                     <video autoPlay loop>
                         <source src="https://storage.googleapis.com/coverr-main/mp4/Clouds_Fly_By.mp4" />

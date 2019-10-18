@@ -252,14 +252,19 @@ class Styles {
                     textDecoration: "underline",
                 }
             },
-
+            {
+                type: "vanilla",
+                selector: ".video-banner",
+                properties: {
+                    backgroundColor: "$mild",
+                }
+            },
             {
                 type: "vanilla",
                 selector: ".video-banner .content-wrapper",
                 properties: {
                     justifyContent: "flex-start",
                     alignItems: "center",
-                    backgroundColor: "$mild",
                 }
             },
 
@@ -346,13 +351,13 @@ class Styles {
                 }
             },
 
-            // {
-            //     type: "vanilla",
-            //     selector: ".vanilla .swim-lane .left:hover",
-            //     properties: {
-            //         backgroundColor: "rgba(0,0,0,.5)",
-            //     }
-            // },
+            {
+                type: "vanilla",
+                selector: ".swim-lane .right .content",
+                properties: {
+                    backgroundColor: "rgba(0,0,0,.5)",
+                }
+            },
 
         ]
     }

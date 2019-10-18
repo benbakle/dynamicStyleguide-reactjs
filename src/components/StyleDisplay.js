@@ -55,12 +55,18 @@ export default class StyleDisplay extends React.Component {
     }
 
     selectorsToHtml = (selectorArray) => {
-        console.log(typeof selectorArray, selectorArray[0]);
+
+        //check if length of array is 1 initially
+        console.log(selectorArray);
         return (
             <>
                 {
-                    typeof selectorArray === "object" &&
-                    <div className={selectorArray[0].replace(/\./g, ' ')}>{this.selectorsToHtml(selectorArray.pop())}</div>
+                    typeof selectorArray === "object" && selectorArray.length === 1 &&
+                        <div className={selectorArray[0].replace(/\./g, ' ')}>{this.state.sampleText}</div>
+                }
+                {
+                    typeof selectorArray === "object" && selectorArray.length !== 1 &&
+                        <div className={selectorArray[0].replace(/\./g, ' ')}>{this.selectorsToHtml(selectorArray.slice(1))}</div>
                 }
                 {
                     typeof selectorArray === "string" &&
