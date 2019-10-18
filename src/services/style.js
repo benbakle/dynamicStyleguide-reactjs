@@ -1,7 +1,7 @@
 class Styles {
     callbacks = [];
 
-    colors = { light: "#efefef", mild: "#77839b", dark: "#282c34" };
+    colors = { light: "#fff", mild: "#77839b", dark: "#282c34" };
 
     css = this.css();
 
@@ -81,7 +81,7 @@ class Styles {
                 selector: ".heading.heading1",
                 properties: {
                     textTransform: "uppercase",
-                    letterSpacing: ".1rem",
+                    letterSpacing: ".3rem",
                     fontSize: "4rem",
                 }
             },
@@ -96,7 +96,7 @@ class Styles {
                 type: "heading",
                 selector: ".heading.heading3",
                 properties: {
-                    textTransform:"uppercase",
+                    textTransform: "uppercase",
                     fontSize: "2.8rem",
                 }
             },
@@ -159,7 +159,7 @@ class Styles {
                     transitionDuration: ".3s",
                     fontWeight: "300",
                     fontSize: "2rem",
-                    padding: ".25em 1.5em",
+                    padding: ".5em 1.5em",
                     boxSizing: "border-box",
                     backgroundColor: "$dark",
                     borderStyle: `solid`,
@@ -223,10 +223,43 @@ class Styles {
             },
             {
                 type: "vanilla",
+                selector: ".navigation",
+                properties: {
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    padding: "5rem 10rem",
+                    boxSizing: "border-box",
+                }
+            },
+
+            {
+                type: "vanilla",
+                selector: ".navigation .a, .navigation a",
+                properties: {
+                    opacity: "1",
+                    textTransform: "uppercase",
+                    letterSpacing: ".1rem",
+                    color: "$light",
+                    textShadow: "0 0 .3rem rgba(0,0,0,.75)",
+                }
+            },
+
+            {
+                type: "vanilla",
+                selector: ".navigation .a.hover, .navigation .a:hover, .navigation a:hover, .navigation a.hover",
+                properties: {
+                    textDecoration: "underline",
+                }
+            },
+
+            {
+                type: "vanilla",
                 selector: ".video-banner .content-wrapper",
                 properties: {
                     justifyContent: "flex-start",
                     alignItems: "center",
+                    backgroundColor: "$mild",
                 }
             },
 
@@ -235,9 +268,31 @@ class Styles {
                 selector: ".video-banner .content",
                 properties: {
                     maxWidth: "76.8rem",
-                    color: "$dark",
-                    padding: "5rem",
+                    color: "$light",
+                    textShadow: "0 0 .3rem rgba(0,0,0,.6)",
+                    padding: " 0 10rem",
                     boxSizing: "border-box",
+                }
+            },
+
+            {
+                type: "vanilla",
+                selector: ".video-banner .button",
+                properties: {
+                    color: "light",
+                    textShadow: "0 0 .3rem rgba(0,0,0,.6)",
+                    borderColor: "$light",
+                    backgroundColor: "transparent",
+                }
+            },
+
+            {
+                type: "vanilla",
+                selector: ".video-banner .button.hover, .video-banner .button:hover, .video-banner button.hover, .video-banner button:hover",
+                properties: {
+                    backgroundColor: "$mild",
+                    color: "$light",
+                    textShadow: "none",
                 }
             },
 
@@ -280,6 +335,14 @@ class Styles {
                 selector: ".swim-lane .right",
                 properties: {
                     width: "60%",
+                }
+            },
+
+            {
+                type: "vanilla",
+                selector: ".swim-lane .heading.heading3",
+                properties: {
+                    color: "$dark",
                 }
             },
 

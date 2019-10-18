@@ -43,7 +43,7 @@ export default class Colors extends React.Component {
         return (
             <div className="colors-display">
 
-                <ul name="navigation-list" style={$css.navigation_list}>
+                <ul className="dsg-navigation-list">
                     {
                         colors && colors.map((item, key) =>
                             <li style={$css.link} key={key}>
@@ -56,7 +56,7 @@ export default class Colors extends React.Component {
                                             {item.value}
                                         </div>
                                         <div style={$css.table_cell}>
-                                            <input name="input-color" type="color" style={$css.input_color} value={item.value} readOnly />
+                                            <input type="color"  value={item.value} readOnly/>
                                         </div>
                                     </div>
                                 </div>
@@ -73,7 +73,7 @@ export default class Colors extends React.Component {
                 <div className="add-color">
                     <div className="control-group">
                         <label>name : </label>
-                        <input value={name} name="name" onChange={handleChange} />
+                        <input className="dsg-input dsg-small" type="text" value={name} name="name" onChange={handleChange} />
                     </div>
                     <div className="control-group">
                         <label>value : </label>
@@ -82,7 +82,7 @@ export default class Colors extends React.Component {
                     <br />
                     <div className="control-group">
                         <div className="button-wrapper">
-                            <button className="button small" onClick={add}>Add</button>
+                            <button className="dsg-button small" onClick={add}>add</button>
                         </div>
                     </div>
                 </div>

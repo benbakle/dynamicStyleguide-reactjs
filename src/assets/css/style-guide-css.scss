@@ -1,0 +1,230 @@
+// color = {
+//     darkest: #050607; //222
+//     darker: #282c34; //333
+//     dark: #2b313a; //444
+//     primary: #3c424f; //444
+//     lightest: #efefef;
+// }
+
+
+@import "./toolbox/media-queries.scss";
+@import "./toolbox/mixins.scss";
+
+
+$dark:#2b313a;
+$darker:#282c34;
+$darkest:#050607;
+$primary: #3c424f;
+$lightest : #efefef;
+
+$fontSize :16px;
+
+$border :10px solid $darker;
+
+.dsg-app {
+    position: relative;
+    width: 100%;
+    left: 0px;
+    transition-duration: 0.3s;
+    width: calc(100% + 300px);
+    left: -300px;
+
+    &.dsg-nav-expanded {
+        left: 0;
+        width: 100%;
+
+        .dsg-body {
+            width: calc(100% - 300px);
+        }
+
+        .dsg-navigation-trigger {
+            transform: rotate(-180deg);
+        }
+
+    }
+
+}
+
+.dsg-body {
+    position: relative;
+    transition-duration: .3s;
+    width: 100%;
+}
+
+.dsg-link {
+    color: $lightest;
+    display: block;
+    padding: 3px 5px;
+    text-decoration: none;
+    font-weight: 300;
+}
+
+button.dsg-button {
+    display: inline-block;
+    transition-duration: .3s;
+    font-weight: 400;
+    font-size: $fontSize;
+    padding: 10px;
+    box-sizing: border-box;
+    color: $lightest;
+    border: 1px solid $lightest;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: $darker;
+
+    @include states {
+        background-color: transparent;
+        color: $lightest;
+    }
+
+    &.dsg-small {
+        font-size: 12px;
+        padding: 10px;
+        box-sizing: border-box;
+        width: 75px;
+        font-family: inherit;
+    }
+}
+
+input[type='text'].dsg-input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid $darkest;
+    border-radius: 3px;
+    font-size: 14px;
+    font-family: 'Roboto Mono', monospace;
+
+    &.dsg-small {
+        font-size: 12px;
+        padding: 5px;
+    }
+}
+
+.dsg-navigation {
+    background-color: $darker;
+    border: $border;
+    font-size: $fontSize;
+    padding-top: 158px;
+    box-sizing: border-box;
+    transition-duration: .3s;
+    width: 100%;
+    max-width: 300px;
+
+    button.dsg-button.dsg-small {
+        padding: 5px;
+        width: auto;
+    }
+}
+
+.dsg-navigation-trigger {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    font-size: 26px;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    color: $lightest;
+    margin: 0;
+    transition-duration: .3s;
+    transform: rotate(0deg);
+    cursor: pointer;
+}
+
+.heading.dsg-navigation-heading {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+ul.dsg-navigation-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.dsg-selector {
+    font-family: 'Roboto Mono', monospace;
+    padding: 30px 0;
+    font-size: 24px;
+    box-sizing: border-box;
+}
+
+.dsg-panel {
+    padding: 30px 15px;
+    box-sizing: border-box;
+    margin: 0;
+    list-style: none;
+    border: $border;
+
+
+    &.dsg-navigation-panel {
+        background-color: $dark;
+        color: $lightest;
+        border-right: none;
+        border-left: none;
+        border-top: none;
+    }
+
+    &.dsg-heading-panel {
+        background-color: $dark;
+        color: $lightest;
+        border-left: none;
+        padding: 45px 15px;
+        margin: 0;
+        margin-left: -290px;
+        width: calc(100vw - 27px);
+        font-size: 40px;
+    }
+
+    &.dsg-update-panel {
+        border-top: none;
+        border-left: none;
+        color: $lightest;
+        background-color: $primary;
+    }
+
+
+    &.dsg-properties-panel {
+        color: $lightest;
+        background-color: $primary;
+        width: 40%;
+        color: $lightest;
+        border-top: none;
+        border-left: none;
+    }
+
+    &.dsg-display-panel {
+        height: auto !important;
+        width: 60%;
+        border-top: none;
+        border-left: none;
+        position: relative;
+
+        .body {
+            height: 100% !important;
+
+            &>div {
+                height: 100% !important;
+            }
+        }
+    }
+
+    &.dsg-add-property-panel {
+        background-color: $primary;
+        border: none;
+        padding: 0;
+    }
+}
+
+
+
+// add_property_panel = {
+//     ...this.panel,
+//     backgroundColor: this.color.primary,
+//     border: `none;
+//     padding: "0: 
+// }

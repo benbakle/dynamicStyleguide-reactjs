@@ -36,18 +36,18 @@ export default class StyleAdd extends React.Component {
             <div style={$css.add_property_panel} className="style-add flex space-between align-center">
                 <div className="control-group">
                     <div style={$css.label}>selector : </div>
-                    <input style={$css.input} value={this.state.selector} name="selector" onChange={this.handleChange} />
+                    <input className="dsg-input" type="text" value={this.state.selector} name="selector" onChange={this.handleChange} />
                 </div>
                 <div className="control-group">
                     <div style={$css.label}>property : </div>
-                    <input style={$css.input} value={this.state.property} name="property" onChange={this.handleChange} />
+                    <input className="dsg-input" type="text" value={this.state.property} name="property" onChange={this.handleChange} />
                 </div>
                 <div className="control-group">
                     <div style={$css.label}>value : </div>
-                    <input style={$css.input} value={this.state.value} name="value" onChange={this.handleChange} />
+                    <input className="dsg-input" type="text" value={this.state.value} name="value" onChange={this.handleChange} />
                 </div>
                 <div className="control-group">
-                    <button style={$css.button_small} onClick={this.add}>Add</button>
+                    <button className="dsg-button dsg-small" onClick={this.add}>Add</button>
                 </div>
             </div>
         );

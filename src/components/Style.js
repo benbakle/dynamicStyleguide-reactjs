@@ -40,9 +40,10 @@ export default class Style extends React.Component {
         let custom = selector.split(", ");
         let result = "";
 
-        custom.map((item, key) => {
-            result = result + `.custom ${item}${custom.length - 1 === key ? " " : ", "}`
-        })
+        for (let i = 0; i < custom.length; i++) {
+            result = result + `.custom ${custom[i]}${custom.length - 1 === i ? " " : ", "}`
+        }
+
         return selector;
     }
 

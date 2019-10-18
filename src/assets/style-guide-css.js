@@ -14,11 +14,32 @@ class StyleGuideCSS {
     borderWidth = "10px";
     fontSize = "16px";
 
-    app = {
-        position: "relative",
-        padding: "0",
-        width: "calc(100% - 300px)",
-    }
+    // app = {
+    //     position: "relative",
+    //     overflowX: "hidden",
+    //     transitionDuration: ".3s",
+    // }
+
+    // app_nav_expanded = {
+    //     ...this.app,
+    //     left: "0",
+    //     width: "100%",
+    // }
+
+    // app_body = {
+    //     position: "relative",
+    //     transitionDuration: ".3s",
+    // }
+
+    // app_body_nav_expanded = {
+    //     ...this.app_body,
+    //     width: "calc(100% - 300px)",
+    // }
+
+    // app_body_nav_collapsed = {
+    //     ...this.app_body,
+    //     width: "100%",
+    // }
 
     label = {
         display: "inline-block",
@@ -27,144 +48,161 @@ class StyleGuideCSS {
         color: this.color.lightest,
     }
 
-    link = {
-        color: this.color.lightest,
-        display: "block",
-        padding: "3px 5px",
-        textDecoration: "none",
-        fontWeight: "300",
-    }
+    // link = {
+    //     color: this.color.lightest,
+    //     display: "block",
+    //     padding: "3px 5px",
+    //     textDecoration: "none",
+    //     fontWeight: "300",
+    // }
 
-    button = {
-        display: "inline-block",
-        transitionDuration: ".3s",
-        fontWeight: "400",
-        fontSize: this.fontSize,
-        padding: "10px",
-        boxSizing: "border-box",
-        color: "inherit",
-        border: `1px solid`,
-        borderColor: `$mild`,
-        borderRadius: "3px",
-        cursor: "pointer",
+    // button = {
+    //     display: "inline-block",
+    //     transitionDuration: ".3s",
+    //     fontWeight: "400",
+    //     fontSize: this.fontSize,
+    //     padding: "10px",
+    //     boxSizing: "border-box",
+    //     color: "inherit",
+    //     border: `1px solid`,
+    //     borderColor: `$mild`,
+    //     borderRadius: "3px",
+    //     cursor: "pointer",
 
-    }
+    // }
 
-    button_small = {
-        ...this.button,
-        fontSize: "12px",
-        padding: "10px",
-        boxSizing: "border-box",
-        width: "75px",
-        fontFamily: "inherit",
-    }
+    // button_small = {
+    //     ...this.button,
+    //     fontSize: "12px",
+    //     padding: "10px",
+    //     boxSizing: "border-box",
+    //     width: "75px",
+    //     fontFamily: "inherit",
+    // }
 
-    input = {
-        display: "block",
-        width: "100%",
-        padding: "10px",
-        boxSizing: "border-box",
-        border: `1px solid ${this.color.darkest}`,
-        borderRadius: "3px",
-        fontSize: "14px",
-        fontFamily: "'Roboto Mono', monospace",
-    }
 
-    selector = {
-        fontFamily: "'Roboto Mono', monospace",
-        padding: "30px 0",
-        fontSize: "24px",
-        boxSizing: "border-box",
+    // selector = {
+    //     fontFamily: "'Roboto Mono', monospace",
+    //     padding: "30px 0",
+    //     fontSize: "24px",
+    //     boxSizing: "border-box",
 
-    }
+    // }
 
-    navigation = {
-        backgroundColor: this.color.darker,
-        borderLeft: `${this.borderWidth} solid`,
-        borderRight: `${this.borderWidth} solid`,
-        borderColor: this.borderColor,
-        fontSize: this.fontSize,
-        paddingTop: "158px",
-        boxSizing: "border-box",
-        width: "300px"
-    }
+    // navigation = {
+    //     backgroundColor: this.color.darker,
+    //     borderLeft: `${this.borderWidth} solid`,
+    //     borderRight: `${this.borderWidth} solid`,
+    //     borderColor: this.borderColor,
+    //     fontSize: this.fontSize,
+    //     paddingTop: "158px",
+    //     boxSizing: "border-box",
+    //     transitionDuration: ".3s",
+    //     width: "100%",
+    //     maxWidth: "300px",
+    // }
 
-    navigation_heading = {
-        fontSize: "18px",
-        fontWeight: "700",
-    }
+    // navigation_trigger = {
+    //     position: "absolute",
+    //     top: "10px",
+    //     left: "10px",
+    //     zIndex: "1000",
+    //     fontSize: "26px",
+    //     border: "none",
+    //     padding: "0",
+    //     backgroundColor: "transparent",
+    //     color: this.color.lightest,
+    //     margin: "0",
+    //     transitionDuration:".3s",
+    // }
 
-    navigation_list = {
-        listStyle: "none",
-        padding: "0",
-        margin: "0",
-        marginBottom: "10px",
-    }
+    // navigation_trigger_expanded = {
+    //     ...this.button,
+    //     ...this.navigation_trigger,
+    //     transform:"rotate(0deg)",
+    // }
 
-    panel = {
-        padding: "30px 15px",
-        boxSizing: "border-box",
-        borderTop: `${this.borderWidth} solid`,
-        borderRight: `${this.borderWidth} solid`,
-        borderBottom: `${this.borderWidth} solid`,
-        borderLeft: `${this.borderWidth} solid`,
-        borderColor: this.borderColor,
-        margin: "0",
-        listStyle: "none",
-    }
+    // navigation_trigger_collapsed = {
+    //     ...this.navigation_trigger,
+    //     transform:"rotate(-180deg)",
+    // }
 
-    navigation_panel = {
-        ...this.panel,
-        backgroundColor: this.color.dark,
-        color: this.color.lightest,
-        borderRight: "none",
-        borderLeft: "none",
-        borderTop: "none",
-    }
+    // navigation_heading = {
+    //     fontSize: "18px",
+    //     fontWeight: "700",
+    // }
 
-    heading_panel = {
-        ...this.panel,
-        backgroundColor: this.color.dark,
-        color: this.color.lightest,
-        borderLeft: `none`,
-        padding: "45px 15px",
-        marginLeft: "-290px",
-        width: "calc(100vw - 27px)",
-        fontSize: "40px",
-    }
+    // navigation_list = {
+    //     listStyle: "none",
+    //     padding: "0",
+    //     margin: "0",
+    //     marginBottom: "10px",
+    // }
 
-    update_panel = {
-        ...this.panel,
-        color: this.color.lightest,
-        backgroundColor: this.color.primary,
-        borderLeft: "none",
-        borderTop: "none",
-    }
+    // panel = {
+    //     padding: "30px 15px",
+    //     boxSizing: "border-box",
+    //     borderTop: `${this.borderWidth} solid`,
+    //     borderRight: `${this.borderWidth} solid`,
+    //     borderBottom: `${this.borderWidth} solid`,
+    //     borderLeft: `${this.borderWidth} solid`,
+    //     borderColor: this.borderColor,
+    //     margin: "0",
+    //     listStyle: "none",
+    // }
 
-    property_panel = {
-        ...this.panel,
-        color: this.color.lightest,
-        backgroundColor: this.color.primary,
-        width: "50%",
-        color: this.color.lightest,
-        borderTop: `none`,
-        borderLeft: `none`,
-    }
+    // navigation_panel = {
+    //     ...this.panel,
+    //     backgroundColor: this.color.dark,
+    //     color: this.color.lightest,
+    //     borderRight: "none",
+    //     borderLeft: "none",
+    //     borderTop: "none",
+    // }
 
-    add_property_panel={
-        ...this.panel,
-        backgroundColor: this.color.primary,
-        borderLeft: `none`,
-        borderRight: `none`,
-    }
+    // heading_panel = {
+    //     ...this.panel,
+    //     backgroundColor: this.color.dark,
+    //     color: this.color.lightest,
+    //     borderLeft: `none`,
+    //     padding: "45px 15px",
+    //     marginLeft: "-290px",
+    //     width: "calc(100vw - 27px)",
+    //     fontSize: "40px",
+    // }
 
-    display_panel = {
-        ...this.panel,
-        width: "50%",
-        borderTop: `none`,
-        borderLeft: `none`,
-        position: "relative",
-    }
+    // update_panel = {
+    //     ...this.panel,
+    //     color: this.color.lightest,
+    //     backgroundColor: this.color.primary,
+    //     borderLeft: "none",
+    //     borderTop: "none",
+    // }
+
+    // property_panel = {
+    //     ...this.panel,
+    //     color: this.color.lightest,
+    //     backgroundColor: this.color.primary,
+    //     width: "50%",
+    //     color: this.color.lightest,
+    //     borderTop: `none`,
+    //     borderLeft: `none`,
+    // }
+
+    // add_property_panel = {
+    //     ...this.panel,
+    //     backgroundColor: this.color.primary,
+    //     border: `none`,
+    //     padding: "0",
+    // }
+
+    // display_panel = {
+    //     ...this.panel,
+    //     width: "50%",
+    //     borderTop: `none`,
+    //     borderLeft: `none`,
+    //     position: "relative",
+    // }
 
     table = {
         width: "100%",

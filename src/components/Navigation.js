@@ -33,20 +33,20 @@ export default class Navigation extends React.Component {
     const { addNewStyle, handleChange } = this;
 
     return (
-      <div name="navigation" style={$css.navigation}>
-        <div name="navigation-panel" style={$css.navigation_panel}>
+      <>
+        <div className="dsg-panel dsg-navigation-panel">
 
-          <div name="navigation-heading" className="heading heading6" style={$css.navigation_heading}>Templates</div>
+          <div className="dsg-navigation-heading .heading">Templates</div>
 
-          <ul name="navigation-list" style={$css.navigation_list}>
+          <ul className="dsg-navigation-list">
             <NavLink to="/" text="vanilla" />
           </ul>
 
         </div>
-        <div name="navigation-panel" style={$css.navigation_panel}>
-          <div name="navigation-heading" className="heading heading6" style={$css.navigation_heading}>Styles</div>
+        <div className="dsg-panel dsg-navigation-panel">
+          <div className="dsg-navigation-heading .heading" >Styles</div>
 
-          <ul name="navigation-list" style={$css.navigation_list}>
+          <ul className="dsg-navigation-list">
             {
               styleTypes && styleTypes.map((item, key) =>
                 <NavLink to={`/type/${item}`} text={item} key={key} />
@@ -55,16 +55,16 @@ export default class Navigation extends React.Component {
           </ul>
 
           <div className="flex">
-            <input value={newStyle} onChange={handleChange} name="newStyle" />
-            <button className="button small" onClick={addNewStyle}><i className="fas fa-plus"></i></button>
+            <input className="dsg-input dsg-small" type="text" value={newStyle} onChange={handleChange} name="newStyle" />
+            <button className="dsg-button dsg-small" onClick={addNewStyle}><i className="fas fa-plus"></i></button>
           </div>
 
         </div>
-        <div name="navigation-panel" style={$css.navigation_panel}>
-          <div name="navigation-heading" style={$css.navigation_heading}>Colors</div>
+        <div className="dsg-panel dsg-navigation-panel">
+          <div className="dsg-navigation-heading .heading">Colors</div>
           <Colors />
         </div>
-      </div>
+      </>
     );
   }
 }

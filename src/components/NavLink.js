@@ -4,10 +4,10 @@ import $css from '../assets/style-guide-css';
 
 export default class NavLink extends React.Component {
     render() {
-        const{to, text} = this.props;
+        const { to, text } = this.props;
         return (
             <li>
-                <ReactNavLink to={to} activeClassName="active" style={$css.link}>
+                <ReactNavLink to={to} activeClassName="active" className="dsg-link">
                     {text}
                 </ReactNavLink>
             </li>
