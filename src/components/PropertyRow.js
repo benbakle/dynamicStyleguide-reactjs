@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from '../services/style';
-import $css from '../assets/style-guide-css';
 
 export default class PropertyRow extends React.Component {
 

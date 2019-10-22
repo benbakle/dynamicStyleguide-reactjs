@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from '../services/style';
 import '../assets/css/layouts/dsg-table.scss';
-import $css from '../assets/style-guide-css';
 
 export default class PropertyAdd extends React.Component {
 

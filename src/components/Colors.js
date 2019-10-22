@@ -1,5 +1,4 @@
 import React from 'react';
-import style from '../services/style';
 import color from '../services/color';
 import $css from '../assets/style-guide-css';
 
