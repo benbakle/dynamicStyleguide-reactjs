@@ -1,6 +1,5 @@
 import React from 'react';
 import { NavLink as ReactNavLink } from 'react-router-dom';
-import $css from '../assets/style-guide-css';
 
 export default class NavLink extends React.Component {
     render() {

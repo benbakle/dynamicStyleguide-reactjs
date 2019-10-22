@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from '../services/style';
 import Properties from './Properties';
-import StyleAdd from './StyleAdd';
 
 export default class StyleDisplay extends React.Component {
 
@@ -42,56 +41,32 @@ export default class StyleDisplay extends React.Component {
 
     mapSelectorsToHtml = (selectors) => {
         let selectorsArray = selectors.split(",");
-        let result
-
-        result = this.selectorsToHtml(selectorsArray[0].split(" ").filter(s => s !== ""));
-
-        // for (let i = 0; i < selectorsArray.length; i++) {
-        //     result = this.selectorsToHtml(selectorsArray[i]);
-        // }
-
-        return (result);
-
+        return (this.selectorsToHtml(selectorsArray[0].split(" ").filter(s => s !== "")));
     }
 
     selectorsToHtml = (selectorArray) => {
-
-        //check if length of array is 1 initially
-        console.log(selectorArray);
         return (
             <>
                 {
                     typeof selectorArray === "object" && selectorArray.length === 1 &&
-                        <div className={selectorArray[0].replace(/\./g, ' ')}>{this.state.sampleText}</div>
+                    <div className={selectorArray[0].replace(/\./g, ' ').replace(":hover", "")}>{this.state.sampleText}</div>
                 }
                 {
                     typeof selectorArray === "object" && selectorArray.length !== 1 &&
-                        <div className={selectorArray[0].replace(/\./g, ' ')}>{this.selectorsToHtml(selectorArray.slice(1))}</div>
+                    <div className={selectorArray[0].replace(/\./g, ' ').replace(":hover", "")}>{this.selectorsToHtml(selectorArray.slice(1))}</div>
                 }
                 {
                     typeof selectorArray === "string" &&
-                    <div className={selectorArray.replace(/\./g, ' ')}>{this.state.sampleText}</div>
+                    <div className={selectorArray.replace(/\./g, ' ').replace(":hover", "")}>{this.state.sampleText}</div>
                 }
-
             </>
-            // selectorArray.map((item, key) =>
-            //     this.selectorToHtml(item, key)
-            // )
         )
     }
 
-    selectorToHtml = (selector) => {
-        // console.log(selector);
-        // return (
-        //     <div className={`${selector.replace(/\./g, ' ')}`}>
-        //         {this.selectorToHtml(selectorArray, index + 1)}
-        //     </div>
-        // )
-    }
-
     render() {
-        const { css, sampleText, type } = this.state;
-        const { handleChange, mapSelectorsToHtml } = this;
+        // , sampleText
+        const { css, type } = this.state;
+        const { mapSelectorsToHtml } = this;
 
         return (
             <div className={`style-display ${type}-styles`}>
@@ -99,22 +74,26 @@ export default class StyleDisplay extends React.Component {
                     {type}
                 </div>
 
-                <div className="dsg-panel dsg-update-panel" >
-                    <StyleAdd type={type} />
 
-                    {/* <div className="control-group">
+                {/* <div className="control-group">
                         <div style={$css.label}>sample text:</div>
                         <div className="input-wrapper">
                             <input style={$css.input} value={sampleText} onChange={handleChange} name="sampleText" />
                         </div>
                     </div> */}
-                </div>
                 <div className="display-wrapper">
                     {
                         css && css.map((item, key) =>
                             <div className="flex" key={key}>
                                 <div className="dsg-panel dsg-properties-panel">
-                                    <div className="dsg-selector">{item.selector} {`{`}</div>
+                                    <div className="dsg-selector">
+                                        {item.selector.split(", ").map((item, key) =>
+                                            <span key={key}>{`${item},`}
+                                                <br />
+                                            </span>
+                                        )}
+                                        {`{`}
+                                    </div>
                                     <Properties style={item} type={type} />
                                     <div className="dsg-selector">{`}`}</div>
                                 </div>

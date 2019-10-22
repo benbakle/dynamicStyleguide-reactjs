@@ -34,21 +34,75 @@ $border :10px solid $darker;
         width: 100%;
 
         .dsg-body {
-            width: calc(100% - 300px);
+            width: calc(100vw - 300px);
         }
 
         .dsg-navigation-trigger {
-            transform: rotate(-180deg);
+            color: $lightest;
+            transform: rotate(0);
         }
 
     }
 
 }
 
+.dsg-body,
+.dsg-navigation {
+    height: calc(100vh - 160px);
+    overflow-y: auto;
+}
+
 .dsg-body {
     position: relative;
     transition-duration: .3s;
-    width: 100%;
+    width: 100vw;
+}
+
+.dsg-navigation {
+    background-color: $darker;
+    border: $border;
+    font-size: $fontSize;
+    padding-top: 50px;
+    width: 350px;
+    box-sizing: border-box;
+    transition-duration: .3s;
+
+    button.dsg-button.dsg-small {
+        padding: 5px;
+        width: auto;
+    }
+}
+
+.dsg-navigation-trigger {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    font-size: 26px;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    margin: 0;
+    transition-duration: .3s;
+    transform: rotate(-180deg);
+    cursor: pointer;
+
+    @include states {
+        color: $lightest;
+        opacity: .5;
+    }
+}
+
+.heading.dsg-navigation-heading {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+ul.dsg-navigation-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 10px;
 }
 
 .dsg-link {
@@ -93,7 +147,6 @@ input[type='text'].dsg-input {
     box-sizing: border-box;
     border: 1px solid $darkest;
     border-radius: 3px;
-    font-size: 14px;
     font-family: 'Roboto Mono', monospace;
 
     &.dsg-small {
@@ -102,54 +155,15 @@ input[type='text'].dsg-input {
     }
 }
 
-.dsg-navigation {
-    background-color: $darker;
-    border: $border;
-    font-size: $fontSize;
-    padding-top: 158px;
-    box-sizing: border-box;
-    transition-duration: .3s;
-    width: 100%;
-    max-width: 300px;
-
-    button.dsg-button.dsg-small {
-        padding: 5px;
-        width: auto;
-    }
+input[type='color'].dsg-input {
+    padding: 0
 }
 
-.dsg-navigation-trigger {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    z-index: 1000;
-    font-size: 26px;
-    border: none;
-    padding: 0;
-    background-color: transparent;
-    color: $lightest;
-    margin: 0;
-    transition-duration: .3s;
-    transform: rotate(0deg);
-    cursor: pointer;
-}
-
-.heading.dsg-navigation-heading {
-    font-size: 18px;
-    font-weight: 700;
-}
-
-ul.dsg-navigation-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    margin-bottom: 10px;
-}
 
 .dsg-selector {
     font-family: 'Roboto Mono', monospace;
     padding: 30px 0;
-    font-size: 24px;
+    font-size: 18px;
     box-sizing: border-box;
 }
 
@@ -175,8 +189,6 @@ ul.dsg-navigation-list {
         border-left: none;
         padding: 45px 15px;
         margin: 0;
-        margin-left: -290px;
-        width: calc(100vw - 27px);
         font-size: 40px;
     }
 
@@ -192,7 +204,6 @@ ul.dsg-navigation-list {
         color: $lightest;
         background-color: $primary;
         width: 40%;
-        color: $lightest;
         border-top: none;
         border-left: none;
     }
@@ -203,14 +214,7 @@ ul.dsg-navigation-list {
         border-top: none;
         border-left: none;
         position: relative;
-
-        .body {
-            height: 100% !important;
-
-            &>div {
-                height: 100% !important;
-            }
-        }
+        overflow: hidden;
     }
 
     &.dsg-add-property-panel {
@@ -218,13 +222,11 @@ ul.dsg-navigation-list {
         border: none;
         padding: 0;
     }
+
+    &.dsg-style-add-panel {}
 }
 
-
-
-// add_property_panel = {
-//     ...this.panel,
-//     backgroundColor: this.color.primary,
-//     border: `none;
-//     padding: "0: 
-// }
+button.dsg-button-to-anchor {
+    background-color: transparent;
+    border: none;
+}

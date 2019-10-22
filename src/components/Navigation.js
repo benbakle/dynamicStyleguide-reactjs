@@ -1,6 +1,6 @@
 import React from 'react';
 import NavLink from './NavLink';
-import $css from './../assets/style-guide-css';
+import StyleAdd from './StyleAdd';
 import styles from '../services/style';
 import history from '../services/history';
 import Colors from './Colors';
@@ -8,7 +8,7 @@ import Colors from './Colors';
 export default class Navigation extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { styleTypes: null, newStyle: "" };
+    this.state = { styleTypes: null, newStyle: ""};
   }
 
   componentDidMount() {
@@ -17,7 +17,11 @@ export default class Navigation extends React.Component {
   }
 
   set = () => {
-    this.setState({ styleTypes: styles.types() })
+    styles.getTypes().then(this.loadTypes);
+  }
+  
+  loadTypes = res =>{
+    this.setState({ styleTypes: res });
   }
 
   handleChange = (e) => {
@@ -34,18 +38,19 @@ export default class Navigation extends React.Component {
 
     return (
       <>
+        <div className="dsg-panel dsg-navigation-panel dsg-style-add-panel">
+          <div className="dsg-navigation-heading .heading">New Style</div>
+          <StyleAdd />
+        </div>
         <div className="dsg-panel dsg-navigation-panel">
-
           <div className="dsg-navigation-heading .heading">Templates</div>
 
           <ul className="dsg-navigation-list">
             <NavLink to="/" text="vanilla" />
           </ul>
-
         </div>
         <div className="dsg-panel dsg-navigation-panel">
           <div className="dsg-navigation-heading .heading" >Styles</div>
-
           <ul className="dsg-navigation-list">
             {
               styleTypes && styleTypes.map((item, key) =>

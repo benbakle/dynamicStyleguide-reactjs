@@ -1,5 +1,5 @@
 import React from 'react';
-import '../assets/css/layouts/table.scss';
+import '../assets/css/layouts/dsg-table.scss';
 import $css from '../assets/style-guide-css';
 import PropertyRow from './PropertyRow';
 import PropertyAdd from './PropertyAdd';
@@ -38,7 +38,7 @@ export default class Properties extends React.Component {
 
         return (
             <div name="properties-display" style={$css.properties_display}>
-                <div name="table" style={$css.table}>
+                <div className="dsg-table">
                     <PropertyAdd selector={selector} type={type} />
                     {display.map((item, key) =>
                         <PropertyRow property={item} selector={selector} type={type} key={key} />

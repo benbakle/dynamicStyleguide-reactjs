@@ -1,0 +1,75 @@
+@import "../toolbox/mixins.scss";
+@import "../toolbox/media-queries.scss";
+
+.dsg-table {
+  width: 100%;
+
+  .dsg-table-head,
+  .dsg-table-row {
+    display: flex;
+  }
+
+  .dsg-table-cell {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    &.property-input-cell,
+    &.property-label-cell {
+      font-family: 'Roboto Mono', monospace;
+      width: calc(50% - 48px);
+      margin: -7px -1px;
+    }
+
+    &.property-label-cell {
+      padding: 10px 20px;
+    }
+
+    &.property-button-cell {
+      width: 96px;
+      padding: 0;
+    }
+  }
+}
+
+
+
+// property_input_cell = {
+//   ...this.table_cell,
+//  
+// }
+
+// property_label_cell = {
+//   ...this.table_cell,
+//   fontFamily: "'Roboto Mono', monospace",
+//   width: "calc(50% - 48px)",
+//   margin: "-7px -1px",
+//   padding: "10px 20px",
+// }
+
+// property_button_cell = {
+//   ...this.table_cell,
+//  
+
+
+// properties_display = {
+//   color: this.color.lightest,
+//   fontSize: "16px",
+//   padding: "0 15px",
+//   boxSizing: "border-box"
+// }
+
+// input_color = {
+//   padding: "0",
+// }
+
+
+
+// table_cell = {
+// 
+// }

@@ -15,7 +15,11 @@ export default class Style extends React.Component {
     }
 
     setCSS = () => {
-        this.setState({ css: styles.css });
+        styles.getCSS().then(this.loadCSS);
+    }
+    
+    loadCSS = res =>{
+        this.setState({ css: res });
     }
 
     stringified = () => {
@@ -27,7 +31,7 @@ export default class Style extends React.Component {
             cssString = cssString +
                 `${style.selector} {${this.stringifyProperties(style.properties)}} `
         }
-        // return ":root { font-size: 62.5%; }";
+
         return cssString;
     }
 

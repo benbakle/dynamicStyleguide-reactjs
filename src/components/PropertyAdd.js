@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../services/style';
-import '../assets/css/layouts/table.scss';
+import '../assets/css/layouts/dsg-table.scss';
 import $css from '../assets/style-guide-css';
 
 export default class PropertyAdd extends React.Component {
@@ -31,14 +31,14 @@ export default class PropertyAdd extends React.Component {
         const { handleChange, add } = this;
 
         return (
-            <div style={$css.table_row}>
-                <div name="property-input-cell" style={$css.property_input_cell}>
+            <div className="dsg-table-row">
+                <div className="dsg-table-cell property-input-cell">
                     <input name="property" value={property} onChange={handleChange} className="dsg-input" type="text" />
                 </div>
-                <div name="property-input-cell" style={$css.property_input_cell}>
+                <div className="dsg-table-cell property-input-cell">
                     <input value={value} name="value" onChange={handleChange} className="dsg-input" type="text" />
                 </div>
-                <div name="property-button-cell" style={$css.property_button_cell}>
+                <div className="dsg-table-cell property-button-cell" >
                     <button className="dsg-button dsg-small" onClick={add}>add</button>
                 </div>
             </div>

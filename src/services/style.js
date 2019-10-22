@@ -1,12 +1,45 @@
-class Styles {
+class Style {
     callbacks = [];
-
-    colors = { light: "#fff", mild: "#77839b", dark: "#282c34" };
-
+    selector = ".vanilla";
+    type = ".vanilla";
     css = this.css();
 
-    add(style) {
+    colors = { light: "#ffffff", mild: "#77839b", dark: "#282c34" };
+
+    async getTypes() {
+        return [...new Set(this.css.map(x => x.type))];
+    }
+
+    async getSelector() {
+        return this.selector;
+    }
+
+    async setSelector(selector) {
+        this.selector = selector;
+        this.updateSubscribers();
+    }
+
+    async getType() {
+        return this.type;
+    }
+
+    async setType(type) {
+        this.type = type;
+        this.updateSubscribers();
+    }
+
+    async addColor(color) {
+        this.colors[color.name] = color.value;
+        this.updateSubscribers();
+    }
+
+    async getColors() {
+        return this.colors;
+    }
+
+    async add(style) {
         let index = this.selectorExists(style.selector);
+
         if (!style.type)
             style.type = "unassigned"
 
@@ -17,17 +50,15 @@ class Styles {
             ? (this.css[index].properties = { ...this.css[index].properties, ...style.properties })
             : this.css.push(style);
 
+
+        this.setSelector(style.selector);
         this.updateSubscribers();
     }
 
-    addColor(color) {
-        this.colors[color.name] = color.value;
-        this.updateSubscribers();
+    async getCSS() {
+        return this.css;
     }
 
-    types() {
-        return [...new Set(this.css.map(x => x.type))];
-    }
 
     isValid(style) {
         return style.selector !== "";
@@ -98,6 +129,7 @@ class Styles {
                 properties: {
                     textTransform: "uppercase",
                     fontSize: "2.8rem",
+                    fontWeight: "300,"
                 }
             },
             {
@@ -151,7 +183,7 @@ class Styles {
 
             {
                 type: "button",
-                selector: ".button, button",
+                selector: ".button",
                 properties: {
                     display: "inline-block",
                     fontFamily: "'Roboto', sans-serif",
@@ -235,12 +267,14 @@ class Styles {
 
             {
                 type: "vanilla",
-                selector: ".navigation .a, .navigation a",
+                selector: ".navigation .a, .navigation a, .navigation button.a, .navigation .button.a",
                 properties: {
                     opacity: "1",
                     textTransform: "uppercase",
                     letterSpacing: ".1rem",
                     color: "$light",
+                    backgroundColor: "transparent",
+                    border: "none",
                     textShadow: "0 0 .3rem rgba(0,0,0,.75)",
                 }
             },
@@ -250,15 +284,17 @@ class Styles {
                 selector: ".navigation .a.hover, .navigation .a:hover, .navigation a:hover, .navigation a.hover",
                 properties: {
                     textDecoration: "underline",
+                    backgroundColor: "transparent",
                 }
             },
-            {
-                type: "vanilla",
-                selector: ".video-banner",
-                properties: {
-                    backgroundColor: "$mild",
-                }
-            },
+            // {
+            //     type: "vanilla",
+            //     selector: ".video-banner",
+            //     properties: {
+            //         width: "100%",
+            //         height: "100vh",
+            //     }
+            // },
             {
                 type: "vanilla",
                 selector: ".video-banner .content-wrapper",
@@ -293,7 +329,7 @@ class Styles {
 
             {
                 type: "vanilla",
-                selector: ".video-banner .button.hover, .video-banner .button:hover, .video-banner button.hover, .video-banner button:hover",
+                selector: ".video-banner .button:hover",
                 properties: {
                     backgroundColor: "$mild",
                     color: "$light",
@@ -307,7 +343,6 @@ class Styles {
                 properties: {
                     backgroundColor: "$mild",
                     opacity: ".5",
-
                 }
             },
 
@@ -318,10 +353,10 @@ class Styles {
                     display: "flex",
                     padding: "10rem 5rem",
                     boxSizing: "border-box",
+                    color: "$dark",
+                    height: "100%",
                 }
             },
-
-
             {
                 type: "vanilla",
                 selector: ".swim-lane .left",
@@ -330,15 +365,16 @@ class Styles {
                     justifyContent: "center",
                     alignItems: "center",
                     fontSize: "30rem",
-                    color: "$mild",
                     width: "40%",
                 }
             },
-
             {
                 type: "vanilla",
                 selector: ".swim-lane .right",
                 properties: {
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
                     width: "60%",
                 }
             },
@@ -347,20 +383,23 @@ class Styles {
                 type: "vanilla",
                 selector: ".swim-lane .heading.heading3",
                 properties: {
-                    color: "$dark",
                 }
             },
 
             {
                 type: "vanilla",
-                selector: ".swim-lane .right .content",
+                selector: ".swim-lane .button",
                 properties: {
-                    backgroundColor: "rgba(0,0,0,.5)",
                 }
             },
-
+            {
+                type: "vanilla",
+                selector: ".swim-lane .button:hover",
+                properties: {
+                }
+            },
         ]
     }
 
 }
-export default new Styles();
+export default new Style();

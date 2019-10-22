@@ -1,4 +1,3 @@
-import { thisExpression } from "@babel/types"
 
 class StyleGuideCSS {
 
@@ -242,6 +241,7 @@ class StyleGuideCSS {
     property_button_cell = {
         ...this.table_cell,
         width: "96px",
+        padding:"0",
     }
 
 

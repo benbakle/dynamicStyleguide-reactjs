@@ -1,17 +1,30 @@
 import React from 'react';
-import styles from '../services/style';
+import style from '../services/style';
+import color from '../services/color';
 import $css from '../assets/style-guide-css';
 
 export default class Colors extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { colors: [] };
+        this.state = {
+            colors: [],
+            name: "",
+            value: "",
+        };
     }
 
     componentDidMount() {
-        styles.subscribe(this.mapColors);
-        this.mapColors();
+        color.subscribe(this.getColors);
+        this.getColors();
+    }
+
+    getColors = () => {
+        color.getColors().then(this.loadColors);
+    }
+
+    loadColors = colors => {
+        this.setState({ colors: colors });
     }
 
     handleChange = (e) => {
@@ -19,21 +32,11 @@ export default class Colors extends React.Component {
     }
 
     add = () => {
-        styles.addColor({ name: this.state.name.trim(), value: this.state.value })
+        color.addColor({ name: this.state.name.trim(), value: this.state.value })
     }
 
     setColor = (color) => {
         this.setState({ name: color.name, value: color.value });
-    }
-
-    mapColors = () => {
-        let colors = [];
-
-        for (var color in styles.colors) {
-            colors.push({ name: color, value: styles.colors[color] });
-        }
-
-        this.setState({ colors: colors });
     }
 
     render() {
@@ -46,25 +49,20 @@ export default class Colors extends React.Component {
                 <ul className="dsg-navigation-list">
                     {
                         colors && colors.map((item, key) =>
-                            <li style={$css.link} key={key}>
-                                <div style={$css.table}>
-                                    <div style={$css.table_row} onClick={() => { setColor(item) }}>
-                                        <div style={$css.table_cell}>
+                            <li className={$css.link} key={key}>
+                                <div className="dsg-table">
+                                    <div className="dsg-table-row" onClick={() => { setColor(item) }}>
+                                        <div className="dsg-table-cell">
                                             {item.name}
                                         </div>
-                                        <div style={$css.table_cell}>
+                                        <div className="dsg-table-_cell">
                                             {item.value}
                                         </div>
-                                        <div style={$css.table_cell}>
-                                            <input type="color"  value={item.value} readOnly/>
+                                        <div className="dsg-table-_cell">
+                                            <input type="color" className="dsg-input" value={item.value} readOnly />
                                         </div>
                                     </div>
                                 </div>
-
-                                {/* <div className="color-box" onClick={() => { setColor(item) }}
-                                    style={{
-                                        backgroundColor: item.value,
-                                    }} ></div> */}
                             </li>
                         )
                     }
@@ -73,11 +71,11 @@ export default class Colors extends React.Component {
                 <div className="add-color">
                     <div className="control-group">
                         <label>name : </label>
-                        <input className="dsg-input dsg-small" type="text" value={name} name="name" onChange={handleChange} />
+                        <input type="text" className="dsg-input dsg-small" value={name} name="name" onChange={handleChange} />
                     </div>
                     <div className="control-group">
                         <label>value : </label>
-                        <input type="color" style={$css.input_color} value={value} name="value" onChange={handleChange} />
+                        <input type="color" className="dsg-input dsg-small" value={value} name="value" onChange={handleChange} />
                     </div>
                     <br />
                     <div className="control-group">
