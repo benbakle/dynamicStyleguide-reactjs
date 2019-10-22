@@ -30,30 +30,32 @@ class App extends Component {
     const { toggleNav, setSelector } = this;
 
     return (
-      <div className={`dsg-app ${navExpanded ? "dsg-nav-expanded" : ""}`}>
-        <div className="flex">
-          <Router history={History}>
+      <>
+        <div className={`dsg-app ${navExpanded ? "dsg-nav-expanded" : ""}`}>
+          <div className="flex">
+            <Router history={History}>
 
-            <div className="dsg-navigation">
-              <Navigation selector={selector} />
-            </div>
+              <div className="dsg-navigation">
+                <Navigation selector={selector} />
+              </div>
 
-            <div className="dsg-body">
+              <div className="dsg-body">
 
-              <button className="dsg-navigation-trigger" onClick={toggleNav}>
-                <i className="far fa-caret-square-left"></i>
-              </button>
+                <button className="dsg-navigation-trigger" onClick={toggleNav}>
+                  <i className="far fa-caret-square-left"></i>
+                </button>
 
-              <Route exact path='/type/:type' component={StyleDisplay} />
-              <Route exact path='/colors' component={Colors} />
+                <Route exact path='/type/:type' component={StyleDisplay} />
+                <Route exact path='/colors' component={Colors} />
 
-              <Route exact path='/' render={() => { return (<Template callback={setSelector} />) }} />
-            </div>
-          </Router>
+                <Route exact path='/' render={() => { return (<Template callback={setSelector} />) }} />
+              </div>
+            </Router>
+          </div>
+
         </div>
-
         <Style />
-      </div>
+      </>
     );
   }
 

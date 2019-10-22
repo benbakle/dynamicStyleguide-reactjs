@@ -26,15 +26,15 @@ $border :10px solid $darker;
     width: 100%;
     left: 0px;
     transition-duration: 0.3s;
-    width: calc(100% + 300px);
-    left: -300px;
+    width: calc(100% + 350px);
+    left: -350px;
 
     &.dsg-nav-expanded {
         left: 0;
         width: 100%;
 
         .dsg-body {
-            width: calc(100vw - 300px);
+            width: calc(100vw - 350px);
         }
 
         .dsg-navigation-trigger {
@@ -224,6 +224,14 @@ input[type='color'].dsg-input {
     }
 
     &.dsg-style-add-panel {}
+
+}
+
+.dsg-properties-display {
+    color: $lightest;
+    font-size: 16px;
+    padding: 0 15px;
+    box-sizing: border-box;
 }
 
 button.dsg-button-to-anchor {

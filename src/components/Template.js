@@ -12,7 +12,7 @@ export default class Template extends React.Component {
     }
 
     componentDidMount() {
-        window.scrollTo(0, 0)
+        window.scrollTo(0, 0);
     }
 
     setSelector = (selector) => {

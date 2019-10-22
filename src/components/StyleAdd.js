@@ -1,7 +1,6 @@
 import React from 'react';
 import style from '../services/style';
 import '../assets/css/components/style-add.scss';
-import $css from '../assets/style-guide-css';
 
 export default class StyleAdd extends React.Component {
 
@@ -12,12 +11,15 @@ export default class StyleAdd extends React.Component {
             selector: "",
             property: "",
             value: "",
+            type: "vanilla",
         }
     }
 
     componentDidMount() {
         style.subscribe(this.setSelector);
+        style.subscribe(this.setType);
         this.setSelector();
+        this.setType();
     }
 
 
@@ -33,8 +35,8 @@ export default class StyleAdd extends React.Component {
         style.getType().then(this.loadType);
     }
 
-    loadType = res => {
-        this.setState({ type: res });
+    loadType = type => {
+        this.setState({ type: type || this.state.type });
     }
 
     handleChange = (e) => {
@@ -52,15 +54,15 @@ export default class StyleAdd extends React.Component {
         return (
             <>
                 <div className="control-group">
-                    <div style={$css.label}>selector : </div>
+                    <div className="dsg-label">selector : </div>
                     <input className="dsg-input dsg-small" type="text" value={this.state.selector} name="selector" onChange={this.handleChange} />
                 </div>
                 <div className="control-group">
-                    <div style={$css.label}>property : </div>
+                    <div className="dsg-label">property : </div>
                     <input className="dsg-input dsg-small" type="text" value={this.state.property} name="property" onChange={this.handleChange} />
                 </div>
                 <div className="control-group">
-                    <div style={$css.label}>value : </div>
+                    <div className="dsg-label">value : </div>
                     <input className="dsg-input dsg-small" type="text" value={this.state.value} name="value" onChange={this.handleChange} />
                 </div>
                 <div className="control-group">

@@ -1,6 +1,5 @@
 import React from 'react';
 import color from '../services/color';
-import $css from '../assets/style-guide-css';
 
 export default class Colors extends React.Component {
 
@@ -48,7 +47,7 @@ export default class Colors extends React.Component {
                 <ul className="dsg-navigation-list">
                     {
                         colors && colors.map((item, key) =>
-                            <li className={$css.link} key={key}>
+                            <li key={key}>
                                 <div className="dsg-table">
                                     <div className="dsg-table-row" onClick={() => { setColor(item) }}>
                                         <div className="dsg-table-cell">
