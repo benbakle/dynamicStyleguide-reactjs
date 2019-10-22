@@ -183,7 +183,7 @@ class Style {
 
             {
                 type: "button",
-                selector: ".button",
+                selector: ".button, button",
                 properties: {
                     display: "inline-block",
                     fontFamily: "'Roboto', sans-serif",

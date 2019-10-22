@@ -55,10 +55,10 @@ export default class Colors extends React.Component {
                                         <div className="dsg-table-cell">
                                             {item.name}
                                         </div>
-                                        <div className="dsg-table-_cell">
+                                        <div className="dsg-table-cell">
                                             {item.value}
                                         </div>
-                                        <div className="dsg-table-_cell">
+                                        <div className="dsg-table-cell">
                                             <input type="color" className="dsg-input" value={item.value} readOnly />
                                         </div>
                                     </div>
